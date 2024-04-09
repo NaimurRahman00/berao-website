@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { ContextData } from "../../provider/AuthProvider";
 
 const Navbar = () => {
   const [dropDownState, setDropDownState] = useState(false);
   const dropDownMenuRef = useRef();
+  const {currentUser} = useContext(ContextData);
 
   useEffect(() => {
     const closeDropDown = (e) => {
@@ -72,6 +74,9 @@ const Navbar = () => {
           <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
         </NavLink>
       </ul>
+      {
+        currentUser && <h2>User ache!</h2>
+      }
       <div className="flex items-center justify-between gap-5">
         <Link to="/login">
           <button className="rounded-full bg-teal-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
