@@ -78,7 +78,7 @@ const Navbar = () => {
             Log In
           </button>
         </Link>
-        <Link>
+        <Link to="/register">
           <button className="rounded-full bg-teal-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
             Register
           </button>

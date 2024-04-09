@@ -1,7 +1,24 @@
+import { useContext } from "react";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import  { ContextData } from "../../provider/AuthProvider";
+
 
 const Login = () => {
+  
+  const {login} = useContext(ContextData);
+
+
+    const handleLogin = e => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email');
+        const password = form.get('password');
+
+        login(email, password)
+    }
+
+
   return (
     <div className="flex h-[80vh] items-center justify-center bg-[#8EA7E9]/20 p-6 md:p-0">
       <div className="flex h-full w-full overflow-hidden rounded-xl shadow-md  md:h-[90%] md:w-[80%] lg:h-[80%]">
@@ -21,11 +38,11 @@ const Login = () => {
           </div>
         </div>
         {/* input side  */}
-        <div className="flex w-full flex-col justify-center bg-white py-10 lg:w-[60%]">
+        <form onSubmit={handleLogin} className="flex w-full flex-col justify-center bg-white py-10 lg:w-[60%]">
           <h2 className="pb-8 text-center text-3xl font-bold text-[#8EA7E9]">
             Login Here
           </h2>
-          <form className="flex  w-full flex-col items-center justify-center gap-4">
+          <div className="flex  w-full flex-col items-center justify-center gap-4">
             <input
               className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]"
               type="email"
@@ -46,7 +63,7 @@ const Login = () => {
               className="w-[80%] rounded-lg bg-[#8EA7E9] px-6 py-2 font-medium text-white md:w-[60%]"
               type="submit"
             />
-          </form>
+          </div>
           {/* divider  */}
           <div className="my-8 flex items-center px-8">
             <hr className="flex-1" />
@@ -72,7 +89,7 @@ const Login = () => {
           </div>
 
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
