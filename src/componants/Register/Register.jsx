@@ -4,16 +4,26 @@ import { Link } from "react-router-dom";
 import { ContextData } from "../../provider/AuthProvider";
 
 const Register = () => {
-  const {register} = useContext(ContextData);
+  const { register, notify } = useContext(ContextData);
 
-  const handleRegister = e => {
+  const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-    const email = form.get('email');
-    const password = form.get('password');
+    const email = form.get("email");
+    const password = form.get("password");
+
+    if (!/^.{6,}$/.test(password)) {
+      return notify("Password length must minimum 6 letter!");
+    }
+    if (!/^(?=.*[A-Z]).+$/.test(password)) {
+      return notify("Password must have an Uppercase letter!");
+    }
+    if (!/^(?=.*[a-z]).+$/.test(password)) {
+      return notify("Password must have a Lowercase letter!");
+    }
 
     register(email, password);
-  }
+  };
 
   return (
     <div className="flex h-screen items-center justify-center bg-[#8EA7E9]/20 p-6 md:p-0">
@@ -38,7 +48,10 @@ const Register = () => {
           <h2 className="pb-8 text-center text-3xl font-bold text-[#8EA7E9]">
             Registration Here
           </h2>
-          <form onSubmit={handleRegister} className="flex  w-full flex-col items-center justify-center gap-4">
+          <form
+            onSubmit={handleRegister}
+            className="flex  w-full flex-col items-center justify-center gap-4"
+          >
             <input
               className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]"
               type="text"
@@ -59,7 +72,7 @@ const Register = () => {
             />
             <input
               className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]"
-              type="password"
+              type="text"
               placeholder="Password"
               name="password"
             />

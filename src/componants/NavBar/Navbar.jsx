@@ -7,7 +7,7 @@ import { ContextData } from "../../provider/AuthProvider";
 const Navbar = () => {
   const [dropDownState, setDropDownState] = useState(false);
   const dropDownMenuRef = useRef();
-  const {currentUser} = useContext(ContextData);
+  const { currentUser, logOut } = useContext(ContextData);
 
   useEffect(() => {
     const closeDropDown = (e) => {
@@ -20,6 +20,27 @@ const Navbar = () => {
 
     return () => {
       document.removeEventListener("mousedown", closeDropDown);
+    };
+  }, []);
+  // Logout
+  const handleLogOut = () => {
+    logOut()
+  }
+
+  // user profile
+  const [open, setOpen] = useState(false);
+  const dropDownRef = useRef(null);
+  const items = ["Profile", "Dashboard", "Settings", "Log Out"];
+
+  useEffect(() => {
+    const close = (e) => {
+      if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", close);
+    return () => {
+      document.removeEventListener("mousedown", close);
     };
   }, []);
 
@@ -74,21 +95,54 @@ const Navbar = () => {
           <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
         </NavLink>
       </ul>
-      {
-        currentUser && <h2>User ache!</h2>
-      }
-      <div className="flex items-center justify-between gap-5">
-        <Link to="/login">
-          <button className="rounded-full bg-teal-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
-            Log In
+      {currentUser ? (
+        <div ref={dropDownRef} className="relative flex items-center gap-6 w-fit text-black">
+          <button onClick={handleLogOut} className="rounded-full bg-red-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">Log out</button>
+          <button onClick={() => setOpen((prev) => !prev)}>
+            <img
+              width={40}
+              height={40}
+              className="size-10 rounded-full bg-slate-500 object-cover duration-500 hover:scale-x-[98%] hover:opacity-80"
+              src="https://source.unsplash.com/300x300/?profile"
+              alt="avatar drop down navigate ui"
+            />
           </button>
-        </Link>
-        <Link to="/register">
-          <button className="rounded-full bg-teal-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
-            Register
-          </button>
-        </Link>
-      </div>
+          <ul
+            className={`${
+              open ? "visible duration-300" : "invisible"
+            } absolute right-0 top-12 z-50 w-fit rounded-sm bg-slate-200 shadow-md`}
+          >
+            {items.map((item, idx) => (
+              <li
+                key={idx}
+                className={`rounded-sm px-6 py-2 ${
+                  open ? "opacity-100 duration-300" : "opacity-0"
+                }  ${
+                  item === "Log Out"
+                    ? "text-red-500 hover:bg-red-600 hover:text-white"
+                    : "hover:bg-slate-300"
+                }`}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <div className="flex items-center justify-between gap-5">
+          <Link to="/login">
+            <button className="rounded-full bg-teal-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
+              Log In
+            </button>
+          </Link>
+          <Link to="/register">
+            <button className="rounded-full bg-teal-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
+              Register
+            </button>
+          </Link>
+        </div>
+      )}
+
       <div
         ref={dropDownMenuRef}
         onClick={() => setDropDownState(!dropDownState)}

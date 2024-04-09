@@ -1,14 +1,15 @@
 import Navbar from "../componants/NavBar/Navbar";
 import { Outlet } from "react-router-dom";
-
+import { ToastContainer } from "react-toastify";
 
 const Root = () => {
 
   return (
-      <div className="w-10/12 mx-auto">
-        <Navbar></Navbar>
-        <Outlet></Outlet>
-      </div>
+    <div className="w-10/12 max-w-[1400px] mx-auto">
+      <Navbar></Navbar>
+      <Outlet></Outlet>
+      <ToastContainer></ToastContainer>
+    </div>
   );
 };
 
