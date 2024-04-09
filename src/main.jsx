@@ -11,6 +11,7 @@ import Rooms from './componants/Rooms/Rooms';
 import Package from './componants/Package/Package';
 import Contact from './componants/Contact/Contact';
 import Login from './componants/Login/Login';
+import Register from './componants/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -38,8 +39,8 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path: "/contact",
-        element: <Contact></Contact>
+        path: "/register",
+        element: <Register></Register>
       },
     ]
   },
