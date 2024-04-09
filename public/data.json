@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Heritage Hotel",
+        "type": "Hotel",
+        "location": "Historic District",
+        "priceRange": "$100-$200",
+        "amenities": ["Conference rooms", "Fitness center", "Valet parking"],
+        "rating": 4.3
+    },
+    {
+      "name": "Sunrise Inn",
+      "type": "Motel",
+      "location": "Highway 101",
+      "priceRange": "$50-$100",
+      "amenities": ["Free parking", "24-hour reception", "WiFi"],
+      "rating": 3.7
+    },
+    {
+      "name": "Oceanview Resort",
+      "type": "Resort",
+      "location": "Seaside Blvd",
+      "priceRange": "$150-$300",
+      "amenities": ["Spa", "Private beach", "Fine dining"],
+      "rating": 4.5
+    },
+    {
+      "name": "Mountain Retreat",
+      "type": "Vacation Rental",
+      "location": "Summit Peak",
+      "priceRange": "$200-$400",
+      "amenities": ["Ski-in/ski-out", "Hot tub", "Fireplace"],
+      "rating": 4.8
+    },
+    {
+      "name": "Forest Lodge",
+      "type": "Lodge",
+      "location": "Woodland Park",
+      "priceRange": "$80-$160",
+      "amenities": ["Guided tours", "Wildlife watching", "Hiking trails"],
+      "rating": 4.2
+    },
+    {
+      "name": "City Center Guest House",
+      "type": "Guest House",
+      "location": "Downtown Avenue",
+      "priceRange": "$60-$120",
+      "amenities": ["Continental breakfast", "Daily housekeeping", "Airport shuttle"],
+      "rating": 4.0
+    }
+  ]
+  
