@@ -13,53 +13,70 @@ export const ContextData = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   // Registration
   const register = (email, password) => {
-    setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
-      .then((user) => {
-        console.log(user.user);
+      .then(result => {
+        if(result) {
+          success('Registration successful!')
+        }
       })
-      .catch();
+      .catch(error => {
+        if(error) {
+          notify('Sorry! This email is already in use!')
+        }
+      });
   };
   // Login
   const login = (email, password) => {
-    setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
-      .then()
-      .catch( notify("Invalid password or email!"));
+      .then(result => {
+        if(result){
+          success('Login successful!')
+        }
+      })
+      .catch(error => {
+        if(error) {
+          notify('Invalid email or password!')
+        }
+  })
   };
   // Observer
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
-      setLoading(false)
     });
 
     return () => {
       unsubscribe();
     };
   }, []);
-    // Log out
-    const logOut = () => {
-        return signOut(auth);
-    }
-    // Toastify
-    const notify = error => {
-        toast.error(error, {
-            position: "top-right"
-          });
-    };
+  // Log out
+  const logOut = () => {
+    return signOut(auth);
+  };
+  // Toastify
+  const notify = (error) => {
+    toast.error(error, {
+      position: "top-right",
+    });   
+  };
+  
+  const success = (success) => {
+    toast.success(success, {
+      position: "top-right",
+    });   
+  };
 
   const authInfo = {
     login,
     register,
     currentUser,
     logOut,
-    loading,
-    notify
+    notify,
+    success
   };
 
   return (

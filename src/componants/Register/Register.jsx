@@ -57,24 +57,28 @@ const Register = () => {
               type="text"
               placeholder="Name"
               name="name"
+              required
             />
             <input
               className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]"
               type="email"
               placeholder="Email"
               name="email"
+              required
             />
             <input
               className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]"
               type="text"
               placeholder="Photo Url"
               name="photoUrl"
+              required
             />
             <input
               className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]"
               type="text"
               placeholder="Password"
               name="password"
+              required
             />
             <p className="text-[14px] text-gray-400">
               Already have an account ?{" "}

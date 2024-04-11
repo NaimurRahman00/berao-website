@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 const Root = () => {
 
   return (
-    <div className="w-10/12 max-w-[1400px] mx-auto">
+    <div className="mx-auto">
       <Navbar></Navbar>
       <Outlet></Outlet>
       <ToastContainer></ToastContainer>
