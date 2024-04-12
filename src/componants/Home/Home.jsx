@@ -46,7 +46,7 @@ const Home = () => {
             {/* arrow left */}
             <button
               onClick={prevSlider}
-              className="flex justify-center items-center hover:bg-white/30 rounded-full p-4"
+              className="flex justify-center items-center bg-white/30 hover:bg-white/20 rounded-full p-4"
             >
               <svg
                 viewBox="0 0 1024 1024"
@@ -62,7 +62,7 @@ const Home = () => {
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   <path
-                    fill="#0095FF"
+                    fill="#000000"
                     d="M685.248 104.704a64 64 0 010 90.496L368.448 512l316.8 316.8a64 64 0 01-90.496 90.496L232.704 557.248a64 64 0 010-90.496l362.048-362.048a64 64 0 0190.496 0z"
                   ></path>
                 </g>
@@ -71,7 +71,7 @@ const Home = () => {
             {/* arrow right */}
             <button
               onClick={nextSlider}
-              className="flex justify-center items-center hover:bg-white/30 rounded-full p-4"
+              className="flex justify-center items-center bg-white/30 hover:bg-white/20 rounded-full p-4"
             >
               <svg
                 viewBox="0 0 1024 1024"
@@ -88,7 +88,7 @@ const Home = () => {
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   <path
-                    fill="#0095FF"
+                    fill="#00000"
                     d="M685.248 104.704a64 64 0 010 90.496L368.448 512l316.8 316.8a64 64 0 01-90.496 90.496L232.704 557.248a64 64 0 010-90.496l362.048-362.048a64 64 0 0190.496 0z"
                   ></path>
                 </g>
@@ -96,9 +96,9 @@ const Home = () => {
             </button>
           </div>
           {/* text container here */}
-          <div className="w-1/2 px-4 left-0 bottom-1/2 absolute drop-shadow-lg text-white rounded-lg">
-            <h1 className="lg:text-3xl mb-3">{sliders[currentSlider].title}</h1>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg">
+          <div className="w-1/2 p-6 top-[20%] text-teal-100 opacity-80 absolute drop-shadow-lg rounded-lg bg-[#00000032] h-fit">
+            <h1 className="lg:text-5xl font-bold mb-3">{sliders[currentSlider].title}</h1>
+            <p className="text-xs text-teal-50 sm:text-sm md:text-base lg:text-2xl">
               {sliders[currentSlider].des}
             </p>
           </div>
