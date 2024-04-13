@@ -16,7 +16,16 @@ const router = createBrowserRouter([
         {
           path: "/",
           element: <Home></Home>,
-          loader: () => fetch("/sliders.json"),
+          loader: async () => {
+            const [sliders, data] = await Promise.all([
+              fetch("/sliders.json"),
+              fetch("/data.json")
+            ]);
+            const slidersData = await sliders.json();
+            const cardData = await data.json();
+  
+            return { slidersData, cardData };
+          }
         },
         {
           path: "/rooms",
