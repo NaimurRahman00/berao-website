@@ -4,184 +4,95 @@ import { Mousewheel, Pagination } from "swiper/modules";
 import "swiper/css";
 // import "swiper/css/bundle";
 import "swiper/css/pagination";
-import './styles.css';
+import "./styles.css";
+import { useState } from "react";
+import { FaLocationDot } from "react-icons/fa6";
+import { RiArrowRightSLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Estate = ({ cardData }) => {
+  const [currentSlider, setCurrentSlider] = useState(0);
   return (
-    <Swiper
-      direction={"horizontal"}
-      slidesPerView={4}
-      spaceBetween={30}
-      mousewheel={true}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[Mousewheel, Pagination]}
-      className="mySwiper"
-    >
-      <SwiperSlide>
-        <div className="mx-auto max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B]">
-          <img
-            width={200}
-            height={200}
-            className="h-[275px] w-[350px] rounded-lg object-cover"
-            src="https://source.unsplash.com/200x200/?bed"
-            alt="card navigate ui"
-          />
-          <div className="grid gap-2">
-            <h1 className="text-lg font-semibold ">Product Name</h1>
-            <p className="text-sm text-gray-500 dark:text-white/60">
-              This is a brief description of the product. It highlights the key
-              features and benefits.
-            </p>
-            <div className="text-lg font-semibold">$99.99</div>
-          </div>
-          <div className="flex gap-4">
-            <button className="rounded-lg bg-slate-800 px-6 py-2 text-[12px] font-semibold text-white duration-300 hover:bg-slate-950 sm:text-sm md:text-base ">
-              Add to Cart
-            </button>
-            <button className="rounded-md border border-black px-4 dark:border-white dark:hover:text-slate-800 dark:hover:bg-white  py-2  duration-300 hover:bg-gray-200">
-              View Details
-            </button>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="mx-auto max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B]">
-          <img
-            width={200}
-            height={200}
-            className="h-[275px] w-[350px] rounded-lg object-cover"
-            src="https://source.unsplash.com/200x200/?bed"
-            alt="card navigate ui"
-          />
-          <div className="grid gap-2">
-            <h1 className="text-lg font-semibold ">Product Name</h1>
-            <p className="text-sm text-gray-500 dark:text-white/60">
-              This is a brief description of the product. It highlights the key
-              features and benefits.
-            </p>
-            <div className="text-lg font-semibold">$99.99</div>
-          </div>
-          <div className="flex gap-4">
-            <button className="rounded-lg bg-slate-800 px-6 py-2 text-[12px] font-semibold text-white duration-300 hover:bg-slate-950 sm:text-sm md:text-base ">
-              Add to Cart
-            </button>
-            <button className="rounded-md border border-black px-4 dark:border-white dark:hover:text-slate-800 dark:hover:bg-white  py-2  duration-300 hover:bg-gray-200">
-              View Details
-            </button>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="mx-auto max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B]">
-          <img
-            width={200}
-            height={200}
-            className="h-[275px] w-[350px] rounded-lg object-cover"
-            src="https://source.unsplash.com/200x200/?bed"
-            alt="card navigate ui"
-          />
-          <div className="grid gap-2">
-            <h1 className="text-lg font-semibold ">Product Name</h1>
-            <p className="text-sm text-gray-500 dark:text-white/60">
-              This is a brief description of the product. It highlights the key
-              features and benefits.
-            </p>
-            <div className="text-lg font-semibold">$99.99</div>
-          </div>
-          <div className="flex gap-4">
-            <button className="rounded-lg bg-slate-800 px-6 py-2 text-[12px] font-semibold text-white duration-300 hover:bg-slate-950 sm:text-sm md:text-base ">
-              Add to Cart
-            </button>
-            <button className="rounded-md border border-black px-4 dark:border-white dark:hover:text-slate-800 dark:hover:bg-white  py-2  duration-300 hover:bg-gray-200">
-              View Details
-            </button>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="mx-auto max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B]">
-          <img
-            width={200}
-            height={200}
-            className="h-[275px] w-[350px] rounded-lg object-cover"
-            src="https://source.unsplash.com/200x200/?bed"
-            alt="card navigate ui"
-          />
-          <div className="grid gap-2">
-            <h1 className="text-lg font-semibold ">Product Name</h1>
-            <p className="text-sm text-gray-500 dark:text-white/60">
-              This is a brief description of the product. It highlights the key
-              features and benefits.
-            </p>
-            <div className="text-lg font-semibold">$99.99</div>
-          </div>
-          <div className="flex gap-4">
-            <button className="rounded-lg bg-slate-800 px-6 py-2 text-[12px] font-semibold text-white duration-300 hover:bg-slate-950 sm:text-sm md:text-base ">
-              Add to Cart
-            </button>
-            <button className="rounded-md border border-black px-4 dark:border-white dark:hover:text-slate-800 dark:hover:bg-white  py-2  duration-300 hover:bg-gray-200">
-              View Details
-            </button>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="mx-auto max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B]">
-          <img
-            width={200}
-            height={200}
-            className="h-[275px] w-[350px] rounded-lg object-cover"
-            src="https://source.unsplash.com/200x200/?bed"
-            alt="card navigate ui"
-          />
-          <div className="grid gap-2">
-            <h1 className="text-lg font-semibold ">Product Name</h1>
-            <p className="text-sm text-gray-500 dark:text-white/60">
-              This is a brief description of the product. It highlights the key
-              features and benefits.
-            </p>
-            <div className="text-lg font-semibold">$99.99</div>
-          </div>
-          <div className="flex gap-4">
-            <button className="rounded-lg bg-slate-800 px-6 py-2 text-[12px] font-semibold text-white duration-300 hover:bg-slate-950 sm:text-sm md:text-base ">
-              Add to Cart
-            </button>
-            <button className="rounded-md border border-black px-4 dark:border-white dark:hover:text-slate-800 dark:hover:bg-white  py-2  duration-300 hover:bg-gray-200">
-              View Details
-            </button>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="mx-auto max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B]">
-          <img
-            width={200}
-            height={200}
-            className="h-[275px] w-[350px] rounded-lg object-cover"
-            src="https://source.unsplash.com/200x200/?bed"
-            alt="card navigate ui"
-          />
-          <div className="grid gap-2">
-            <h1 className="text-lg font-semibold ">Product Name</h1>
-            <p className="text-sm text-gray-500 dark:text-white/60">
-              This is a brief description of the product. It highlights the key
-              features and benefits.
-            </p>
-            <div className="text-lg font-semibold">$99.99</div>
-          </div>
-          <div className="flex gap-4">
-            <button className="rounded-lg bg-slate-800 px-6 py-2 text-[12px] font-semibold text-white duration-300 hover:bg-slate-950 sm:text-sm md:text-base ">
-              Add to Cart
-            </button>
-            <button className="rounded-md border border-black px-4 dark:border-white dark:hover:text-slate-800 dark:hover:bg-white  py-2  duration-300 hover:bg-gray-200">
-              View Details
-            </button>
-          </div>
-        </div>
-      </SwiperSlide>
-    </Swiper>
+    <div className="w-10/12 mx-auto py-20">
+      <div>
+        <h2 className="text-4xl font-bold text-center">Estate</h2>
+      </div>
+      <Swiper
+        direction={"horizontal"}
+        slidesPerView={0.5}
+        spaceBetween={30}
+        mousewheel={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Mousewheel, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide className="flex gap-10 justify-center px-2">
+          {cardData.map((slide, inx) => (
+            <div
+              key={inx}
+              className="mx-auto my-20 h-[37.5rem] w-[22rem] space-y-6 bg-white font-sans border border-[#2121214a] rounded-sm shadow-2xl shadow-[#5a5a5a] flex flex-col"
+            >
+              <div className="relative flex h-48 w-full justify-center lg:h-[280px]">
+                <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
+                  {/* love  */}
+                  <div className="flex items-center">
+                    <svg
+                      width={30}
+                      className="fill-transparent stroke-white stroke-2 hover:fill-red-500 hover:stroke-red-500 "
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ cursor: "pointer" }}
+                    >
+                      {" "}
+                      <g strokeWidth="0"></g>{" "}
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      ></g>{" "}
+                      <g id="SVGRepo_iconCarrier">
+                        <path d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <button className="rounded-full bg-red-600 border border-red-800 px-4 py-1 font-medium text-white duration-200 hover:bg-red-700">
+                    {slide.status}
+                  </button>
+                </div>
+                <img
+                  width={300}
+                  height={300}
+                  className="h-full w-full bg-black/40"
+                  src={slide.image}
+                  alt="card navigate ui"
+                />
+              </div>
+              <div className="mx-auto w-[85%] space-y-2 text-start font-semibold flex-grow">
+                <h6 className="text-sm md:text-base lg:text-2xl font-bold">
+                  {slide.estate_title}
+                </h6>
+                <h2 className="flex gap-2 items-center text-sm opacity-60">
+                  <FaLocationDot />
+                  {slide.location}
+                </h2>
+              </div>
+              <div className="px-6">
+                <p className="text-xs text-start font-semibold text-gray-400 md:text-sm">
+                  {slide.description}
+                </p>
+                <h2 className="text-start bg-teal-600 px-4 py-1 w-fit rounded-full mt-4 text-white">{slide.segment_name}</h2>
+              </div>
+              <div className="flex items-center gap-3 justify-between text-sm md:text-base px-6 border-t-2 border-gray-200 py-4">
+                <div className="flex gap-1 items-center"><h2>Price : </h2> <h3 className="font-medium text-teal-600">{slide.price}</h3></div>
+                <Link className="flex items-center text-slate-600 font-medium text-lg">View property <RiArrowRightSLine className="text-2xl"/></Link>
+              </div>
+            </div>
+          ))}
+        </SwiperSlide>
+      </Swiper>
+    </div>
   );
 };
 

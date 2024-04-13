@@ -9,7 +9,7 @@
     "area": "Varies per room",
     "location": "Historic District",
     "facilities": ["Conference rooms", "Fitness center", "Valet parking"],
-    "image": "path_to/heritage_hotel_image.jpg"
+    "image": "https://i.ibb.co/JdGqDWS/hotel.jpg"
   },
   {
     "estate_title": "Sunrise Inn",
@@ -21,7 +21,7 @@
     "area": "Varies per room",
     "location": "Highway 101",
     "facilities": ["Free parking", "24-hour reception", "WiFi"],
-    "image": "path_to/sunrise_inn_image.jpg"
+    "image": "https://i.ibb.co/vmSn3wY/motel.jpg"
   },
   {
     "estate_title": "Oceanview Resort",
@@ -33,7 +33,7 @@
     "area": "Varies per suite",
     "location": "Seaside Blvd",
     "facilities": ["Spa", "Private beach", "Fine dining"],
-    "image": "path_to/oceanview_resort_image.jpg"
+    "image": "https://i.ibb.co/nbtWcwf/resort.jpg"
   },
   {
     "estate_title": "Mountain Retreat",
@@ -45,7 +45,7 @@
     "area": "2000 sq ft",
     "location": "Summit Peak",
     "facilities": ["Ski-in/ski-out", "Hot tub", "Fireplace"],
-    "image": "path_to/mountain_retreat_image.jpg"
+    "image": "https://i.ibb.co/ZWfz9fg/vacation-rental.jpg"
   },
   {
     "estate_title": "Forest Lodge",
@@ -57,10 +57,10 @@
     "area": "1500 sq ft",
     "location": "Woodland Park",
     "facilities": ["Guided tours", "Wildlife watching", "Hiking trails"],
-    "image": "path_to/forest_lodge_image.jpg"
+    "image": " https://i.ibb.co/WDHvjJn/lodge.jpg"
   },
   {
-    "estate_title": "City Center Guest House",
+    "estate_title": "Center Guest House",
     "id": 6,
     "segment_name": "Guest House",
     "description": "Convenient downtown lodging with homely comforts and easy access to the city.",
@@ -69,6 +69,6 @@
     "area": "1200 sq ft",
     "location": "Downtown Avenue",
     "facilities": ["Continental breakfast", "Daily housekeeping", "Airport shuttle"],
-    "image": "path_to/city_center_guest_house_image.jpg"
+    "image": "https://i.ibb.co/58G2kGd/guest-house.jpg"
   }
 ]
