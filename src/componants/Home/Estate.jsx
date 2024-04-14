@@ -11,7 +11,6 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const Estate = ({ cardData }) => {
-  const [currentSlider, setCurrentSlider] = useState(0);
   return (
     <div className="w-10/12 mx-auto py-20">
       <div>
@@ -86,7 +85,7 @@ const Estate = ({ cardData }) => {
               </div>
               <div className="flex items-center gap-3 justify-between text-sm md:text-base px-6 border-t-2 border-gray-200 py-4">
                 <div className="flex gap-1 items-center"><h2>Price : </h2> <h3 className="font-medium text-teal-600">{slide.price}</h3></div>
-                <Link className="flex items-center text-slate-600 font-medium text-lg">View property <RiArrowRightSLine className="text-2xl"/></Link>
+                <Link to={`/view-property/${slide.id}`} className="flex items-center text-slate-600 font-medium text-lg">View property <RiArrowRightSLine className="text-2xl"/></Link>
               </div>
             </div>
           ))}

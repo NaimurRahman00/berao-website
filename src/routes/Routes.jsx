@@ -6,6 +6,8 @@ import Package from "../componants/Package/Package";
 import Contact from "../componants/Contact/Contact";
 import Login from "../componants/Login/Login";
 import Register from "../componants/Register/Register";
+import ViewProperty from "../componants/ViewProperty/ViewProperty";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -26,6 +28,11 @@ const router = createBrowserRouter([
   
             return { slidersData, cardData };
           }
+        },
+        {
+          path: "/view-property/:id",
+          element: <PrivateRoute><ViewProperty></ViewProperty></PrivateRoute>,
+          loader: ()=> fetch("/data.json")
         },
         {
           path: "/rooms",

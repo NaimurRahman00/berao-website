@@ -9,31 +9,34 @@
     "area": "Varies per room",
     "location": "Historic District",
     "facilities": ["Conference rooms", "Fitness center", "Valet parking"],
-    "image": "https://i.ibb.co/JdGqDWS/hotel.jpg"
+    "image": "https://i.ibb.co/jJQZsND/hotel-card.jpg",
+    "more_description": "The Heritage Hotel, located in the Historic District, is a testament to timeless elegance and luxury. With a 4.3-star rating, it offers guests a unique blend of historical charm and modern amenities. The hotel features well-appointed conference rooms, a state-of-the-art fitness center, and convenient valet parking. Each room, priced between $100-$200, is designed to provide an unparalleled experience of comfort and sophistication. Guests can enjoy the proximity to cultural landmarks while indulging in the hotel’s exceptional service and hospitality, making every stay memorable."
   },
   {
     "estate_title": "Sunrise Inn",
     "id": 2,
     "segment_name": "Motel",
     "description": "Affordable roadside accommodation with convenient access and essential amenities.",
-    "price": "$50-$100",
-    "status": "rent",
+    "price": "$15000-$65000",
+    "status": "sale",
     "area": "Varies per room",
     "location": "Highway 101",
     "facilities": ["Free parking", "24-hour reception", "WiFi"],
-    "image": "https://i.ibb.co/vmSn3wY/motel.jpg"
+    "image": "https://i.ibb.co/xjpt7Wn/motel-card.jpg",
+    "more_description": "Sunrise Inn, a cozy motel located off Highway 101, is the ideal stop for travelers seeking comfort and convenience. With its affordable price range of $50-$100, guests enjoy free parking, 24-hour reception, and complimentary WiFi. The motel’s commitment to service is evident in its 3.7-star rating, ensuring a restful stay. Whether passing through or exploring the local area, Sunrise Inn provides a welcoming atmosphere with essential amenities to meet the needs of every guest."
   },
   {
     "estate_title": "Oceanview Resort",
     "id": 3,
     "segment_name": "Resort",
     "description": "Luxurious seaside escape with private beach, spa, and gourmet dining.",
-    "price": "$150-$300",
+    "price": "$15000-$30000",
     "status": "sale",
     "area": "Varies per suite",
     "location": "Seaside Blvd",
     "facilities": ["Spa", "Private beach", "Fine dining"],
-    "image": "https://i.ibb.co/nbtWcwf/resort.jpg"
+    "image": "https://i.ibb.co/1JNysDQ/resort-card.jpg",
+    "more_description": "Oceanview Resort, perched on Seaside Boulevard, is a 4.5-star sanctuary where luxury meets the horizon. Guests are treated to an exclusive beachfront, a rejuvenating spa, and gourmet dining options. Each stay promises panoramic ocean views, elegantly designed suites, and a serene atmosphere. The resort’s commitment to excellence is reflected in its attentive service, ensuring a bespoke experience for every visitor. Whether seeking a peaceful retreat or an opulent escape, Oceanview Resort is a haven of sophistication, offering a slice of paradise with every indulgent amenity one could desire."
   },
   {
     "estate_title": "Mountain Retreat",
@@ -45,7 +48,8 @@
     "area": "2000 sq ft",
     "location": "Summit Peak",
     "facilities": ["Ski-in/ski-out", "Hot tub", "Fireplace"],
-    "image": "https://i.ibb.co/ZWfz9fg/vacation-rental.jpg"
+    "image": "https://i.ibb.co/nfDdL2r/vacation-rental-card.jpg",
+    "more_description": "Mountain Retreat offers a secluded getaway, nestled in Summit Peak’s serene beauty. With a 4.8-star rating, it’s a skier’s paradise, featuring ski-in/ski-out access, a hot tub, and a cozy fireplace. The rental spans 2000 sq ft, providing ample space for relaxation and adventure. Priced at $200-$400, it’s an ideal escape for those seeking luxury in the tranquility of the mountains. Guests can unwind in comfort while enjoying the breathtaking landscape and the retreat’s top-notch amenities, ensuring a vacation experience that blends excitement with relaxation."
   },
   {
     "estate_title": "Forest Lodge",
@@ -57,7 +61,8 @@
     "area": "1500 sq ft",
     "location": "Woodland Park",
     "facilities": ["Guided tours", "Wildlife watching", "Hiking trails"],
-    "image": " https://i.ibb.co/WDHvjJn/lodge.jpg"
+    "image": "https://i.ibb.co/rbTpBDv/lodge-card.jpg",
+    "more_description": "Forest Lodge is a serene retreat nestled among lush woodlands and rugged peaks. With a 4.2-star rating, it offers a unique blend of rustic charm and modern amenities. Guests can enjoy guided tours, wildlife watching, and hiking trails, all within the tranquil embrace of nature. The lodge’s cozy accommodations ensure a comfortable stay, while the surrounding forest provides a peaceful backdrop for relaxation and adventure. Whether seeking solitude or an active holiday, Mountain Forest Lodge is an ideal destination for those looking to reconnect with nature."
   },
   {
     "estate_title": "Center Guest House",
@@ -69,6 +74,7 @@
     "area": "1200 sq ft",
     "location": "Downtown Avenue",
     "facilities": ["Continental breakfast", "Daily housekeeping", "Airport shuttle"],
-    "image": "https://i.ibb.co/58G2kGd/guest-house.jpg"
+    "image": "https://i.ibb.co/nnVh6ZL/guest-house-card.jpg",
+    "more_description": "City Center Guest House, nestled in Downtown Avenue, offers a blend of convenience and comfort. With a 4.0-star rating, it provides a homely atmosphere, complete with continental breakfast, daily housekeeping, and an airport shuttle service. The guest house’s location is perfect for exploring the city, with easy access to local attractions and transport links. Priced affordably at $60-$120, it’s an ideal choice for both short-term and extended stays. Guests can expect a warm welcome and personalized service, ensuring a pleasant and hassle-free experience during their visit."
   }
 ]
