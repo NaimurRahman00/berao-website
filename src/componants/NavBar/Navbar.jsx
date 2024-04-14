@@ -48,7 +48,7 @@ const Navbar = () => {
     <nav className=" px-4 py-2 text-black mb-12 fixed top-0 left-0 right-0 z-50 bg-[#0000002c]">
       <div className="w-10/12 mx-auto max-w-[1400px] flex items-center justify-between">
         <div className="scale-100 cursor-pointer rounded-2xl py-2 text-xl font-semibold text-black transition-all duration-200 hover:scale-110">
-          <h2 className="text-white text-3xl">Berao</h2>
+          <h2 className="text-teal-700 font-extrabold text-3xl">Berao</h2>
         </div>
         <ul className="hidden items-center gap-4 justify-between md:flex text-white">
           <NavLink
