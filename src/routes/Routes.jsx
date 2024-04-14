@@ -8,6 +8,7 @@ import Login from "../componants/Login/Login";
 import Register from "../componants/Register/Register";
 import ViewProperty from "../componants/ViewProperty/ViewProperty";
 import PrivateRoute from "./PrivateRoute";
+import NotFound from "../componants/404/NotFound";
 
 
 const router = createBrowserRouter([
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         },
       ],
     },
+    {
+      path: "*",
+      element: <NotFound></NotFound>
+    }
   ]);
 
 export default router;

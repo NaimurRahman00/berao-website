@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-t from-teal-800 to-white py-10">
       <div className="w-10/12 max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-10 gap-10 py-40 border-b-2 border-white/30">
+        <div className="grid grid-cols-10 gap-10 py-40 border-b border-white/30">
           <div className="col-span-3">
             <h1 className="font-extrabold text-2xl mb-6 text-teal-700">Berao</h1>
             <p className="w-4/6">
