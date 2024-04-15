@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import { FaRegBookmark, FaRegHeart } from "react-icons/fa";
 
 const Blog = () => {
+  // Dynamic title
+  useEffect(()=> {
+    document.title='Berao | Blogs'
+  },[])
+
   return (
     <div className="w-10/12 max-w-[1400px] mx-auto pt-24">
       {/* Banner part */}

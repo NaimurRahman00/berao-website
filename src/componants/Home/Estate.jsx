@@ -25,7 +25,7 @@ const Estate = ({ cardData }) => {
           clickable: true,
         }}
         modules={[Mousewheel, Pagination]}
-        className="mySwiper"
+        className="mySwiper cursor-pointer"
       >
         <SwiperSlide className="flex gap-10 justify-center px-2">
           {cardData.map((slide, inx) => (

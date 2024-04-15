@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import  { ContextData } from "../../provider/AuthProvider";
@@ -8,6 +8,10 @@ const Login = () => {
   
   const {login} = useContext(ContextData);
 
+  // Dynamic title
+  useEffect(()=> {
+    document.title='Berao | Log In'
+  },[])
 
     const handleLogin = e => {
         e.preventDefault();

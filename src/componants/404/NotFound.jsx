@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import Navbar from "../NavBar/Navbar";
 
 const NotFound = () => {
+      // Dynamic title
+  useEffect(()=> {
+    document.title='Berao | Not found'
+  },[])
     return (
         <div className="max-h-screen relative bg-white">
             <Navbar></Navbar>

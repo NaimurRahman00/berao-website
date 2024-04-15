@@ -5,9 +5,16 @@ import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const ViewProperty = () => {
+  
   const data = useLoaderData();
+  console.log(data)
   const { id } = useParams();
   const cardData = data[id - 1];
+  
+  // Dynamic title 
+  useEffect(()=> {
+    document.title=`Berao | ${cardData.estate_title}`
+  },[])
 
   //   slider
   const [currentSlider, setCurrentSlider] = useState(0);
