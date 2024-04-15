@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ContextData } from "../../provider/AuthProvider";
+import Navbar from "../NavBar/Navbar";
 
 const Register = () => {
   const { register, notify } = useContext(ContextData);
@@ -32,6 +33,7 @@ const Register = () => {
 
   return (
     <div className="flex h-screen items-center justify-center bg-[#8EA7E9]/20 p-6 md:p-0">
+      <Navbar></Navbar>
       <div className="flex h-full w-full overflow-hidden rounded-xl shadow-md  md:h-[90%] md:w-[80%] lg:h-[80%]">
         {/* register design side  */}
         <div className="relative hidden h-full items-center justify-center bg-[#8EA7E9] md:flex md:w-[60%] lg:w-[40%]">
