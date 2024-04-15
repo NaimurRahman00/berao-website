@@ -63,14 +63,14 @@ const Navbar = () => {
             <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
           </NavLink>
           <NavLink
-            to="/rooms"
+            to="/blog"
             className={({ isActive }) =>
               isActive
                 ? "group flex cursor-pointer flex-col bg-teal-600 px-4 pt-1 py-0.5 rounded-full text-white"
                 : "group flex cursor-pointer flex-col px-4 pt-1 py-0.5"
             }
           >
-            Rooms
+            Blogs
             <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
           </NavLink>
           <NavLink

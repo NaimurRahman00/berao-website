@@ -9,6 +9,7 @@ import Register from "../componants/Register/Register";
 import ViewProperty from "../componants/ViewProperty/ViewProperty";
 import PrivateRoute from "./PrivateRoute";
 import NotFound from "../componants/404/NotFound";
+import Blog from "../layout/Blog";
 
 
 const router = createBrowserRouter([
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
         {
           path: "/register",
           element: <Register></Register>,
+        },
+        {
+          path: "/blog",
+          element: <PrivateRoute><Blog></Blog></PrivateRoute>
         },
       ],
     },
