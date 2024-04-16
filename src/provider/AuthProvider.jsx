@@ -15,7 +15,9 @@ const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [userPhoto, setUserPhoto] = useState(null);
   const [userName, setUserName] = useState(null);
+  const [userEmail, setUserEmail] = useState(null);
   const [loading, setLoading] = useState(true);
+
 
   // Registration
   const register = (email, password, name, photoURL) => {
@@ -25,7 +27,8 @@ const AuthProvider = ({ children }) => {
           success("Registration successful!");
         }
         setUserPhoto(photoURL);
-        setUserName(name)
+        setUserName(name);
+        setUserEmail(email)
       })
       .catch((error) => {
         if (error) {
@@ -67,6 +70,17 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+    // Modal
+    const [openModal, setOpenModal] = useState(false);
+    useEffect(() => {
+      if (openModal) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflowY = "auto";
+      }
+      return () => (document.body.style.overflow = "auto");
+    }, [openModal]);
+
   const authInfo = {
     login,
     register,
@@ -76,7 +90,10 @@ const AuthProvider = ({ children }) => {
     success,
     loading,
     userPhoto,
-    userName
+    userName,
+    openModal,
+    setOpenModal,
+    userEmail
   };
 
   return (

@@ -7,8 +7,8 @@ import { ContextData } from "../../provider/AuthProvider";
 const Navbar = () => {
   const [dropDownState, setDropDownState] = useState(false);
   const dropDownMenuRef = useRef();
-  const { currentUser, logOut, userPhoto, userName } = useContext(ContextData);
-  console.log(currentUser)
+  const { currentUser, logOut, userPhoto, userName, setOpenModal } = useContext(ContextData);
+  console.log(currentUser);
   useEffect(() => {
     const closeDropDown = (e) => {
       if (!dropDownMenuRef?.current?.contains(e?.target)) {
@@ -30,7 +30,6 @@ const Navbar = () => {
   // user profile
   const [open, setOpen] = useState(false);
   const dropDownRef = useRef(null);
-  const items = ["Profile", "Dashboard", "Settings", "Log Out"];
 
   useEffect(() => {
     const close = (e) => {
@@ -49,7 +48,10 @@ const Navbar = () => {
       <div className="relative">
         <div className="w-10/12 px-4 py-2 mx-auto max-w-[1400px] flex items-center justify-between">
           <div className="scale-100 cursor-pointer rounded-2xl py-2 text-xl font-semibold text-black transition-all duration-200 hover:scale-110">
-            <Link to="/" className="font-extrabold text-3xl text-transparent bg-clip-text bg-gradient-to-br from-emerald-600 to-blue-400">
+            <Link
+              to="/"
+              className="font-extrabold text-3xl text-transparent bg-clip-text bg-gradient-to-br from-emerald-600 to-blue-400"
+            >
               Berao
             </Link>
           </div>
@@ -127,7 +129,11 @@ const Navbar = () => {
               >
                 Log out
               </button>
-              <button className="tooltip tooltip-bottom tooltip-accent" data-tip={userName || currentUser.displayName } onClick={() => setOpen((prev) => !prev)}>
+              <button
+                className="tooltip tooltip-right tooltip-accent"
+                data-tip={userName || currentUser.displayName}
+                onClick={() => setOpen((prev) => !prev)}
+              >
                 <img
                   width={40}
                   height={40}
@@ -139,22 +145,14 @@ const Navbar = () => {
               <ul
                 className={`${
                   open ? "visible duration-300" : "invisible"
-                } absolute right-0 top-12 z-50 w-fit rounded-sm bg-slate-200 shadow-md`}
+                } absolute flex flex-col right-0 top-[3.4rem] z-50 w-[10rem] text-center rounded-sm bg-slate-200 shadow-md`}
               >
-                {items.map((item, idx) => (
-                  <li
-                    key={idx}
-                    className={`rounded-sm px-6 py-2 ${
-                      open ? "opacity-100 duration-300" : "opacity-0"
-                    }  ${
-                      item === "Log Out"
-                        ? "text-red-500 hover:bg-red-600 hover:text-white"
-                        : "hover:bg-slate-300"
-                    }`}
-                  >
-                    {item}
-                  </li>
-                ))}
+                <Link onClick={() => setOpenModal(true)} className="rounded-sm px-6 py-2 opacity-100 duration-300 bg-gradient-to-tr from-green-400 to-teal-700 text-white/70 font-bold hover:opacity-70">
+                  Profile
+                </Link>
+                <Link className="rounded-sm px-6 py-2 opacity-100 duration-300 bg-gradient-to-br from-green-400 to-teal-700 border-t border-t-black/40 text-white/70 font-bold hover:opacity-70">
+                  Setting
+                </Link>
               </ul>
             </div>
           ) : (

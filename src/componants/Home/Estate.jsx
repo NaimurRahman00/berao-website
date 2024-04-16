@@ -5,7 +5,6 @@ import "swiper/css";
 // import "swiper/css/bundle";
 import "swiper/css/pagination";
 import "./styles.css";
-import { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
