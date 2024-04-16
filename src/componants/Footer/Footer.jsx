@@ -35,28 +35,28 @@ const Footer = () => {
           <div className="col-span-3">
             <h2 className="uppercase text-lg font-bold mb-6">Socials</h2>
             <div className="flex flex-wrap gap-4 w-5/6">
-              <Link className="p-3 rounded-full bg-teal-600 text-white">
+              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
                 <FaFacebookF />
               </Link>
-              <Link className="p-3 rounded-full bg-teal-600 text-white">
+              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
                 <FaInstagram />
               </Link>
-              <Link className="p-3 rounded-full bg-teal-600 text-white">
+              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
                 <FaXTwitter />
               </Link>
-              <Link className="p-3 rounded-full bg-teal-600 text-white">
+              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
                 <FaLinkedinIn />
               </Link>
-              <Link className="p-3 rounded-full bg-teal-600 text-white">
+              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
                 <FaThreads />
               </Link>
-              <Link className="p-3 rounded-full bg-teal-600 text-white">
+              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
                 <SlSocialVkontakte />
               </Link>
-              <Link className="p-3 rounded-full bg-teal-600 text-white">
+              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
                 <SlSocialTumblr />
               </Link>
-              <Link className="p-3 rounded-full bg-teal-600 text-white">
+              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
                 <TiSocialYoutube />
               </Link>
             </div>

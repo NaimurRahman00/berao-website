@@ -1,30 +1,34 @@
 import { useCallback, useEffect, useState } from "react";
 import { FaArrowRightLong, FaChartArea } from "react-icons/fa6";
+import { FiPhoneCall } from "react-icons/fi";
 import { MdOutlineLocalConvenienceStore } from "react-icons/md";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { SlCalender } from "react-icons/sl";
 import { Link, useLoaderData, useParams } from "react-router-dom";
+// leaflet
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css"; 
 
 const ViewProperty = () => {
-  
   const data = useLoaderData();
-  console.log(data)
   const { id } = useParams();
   const cardData = data[id - 1];
-  
-  // Dynamic title 
-  useEffect(()=> {
-    document.title=`Berao | ${cardData.estate_title}`
-  },[])
+  console.log(cardData);
+
+  // Dynamic title
+  useEffect(() => {
+    document.title = `Berao | ${cardData.estate_title}`;
+  }, []);
 
   //   slider
   const [currentSlider, setCurrentSlider] = useState(0);
   // The slider images array
   const sliderImages = [
-    "https://source.unsplash.com/500x500/?nature/?1",
-    "https://source.unsplash.com/500x500/?nature/?3",
-    "https://source.unsplash.com/500x500/?nature/?5",
-    "https://source.unsplash.com/500x500/?nature/?2",
-    "https://source.unsplash.com/500x500/?nature/?4",
+    `https://source.unsplash.com/500x500/?${cardData.segment_name}/?1`,
+    `https://source.unsplash.com/500x500/?${cardData.segment_name}/?3`,
+    `https://source.unsplash.com/500x500/?${cardData.segment_name}/?5`,
+    `https://source.unsplash.com/500x500/?${cardData.segment_name}/?2`,
+    `https://source.unsplash.com/500x500/?${cardData.segment_name}/?4`,
   ];
   const prevSlider = () => {
     setCurrentSlider((currentSlider) =>
@@ -168,12 +172,12 @@ const ViewProperty = () => {
           </div>
           <div className="col-span-6 mt-1 flex flex-col">
             <div className="flex-grow">
-            <h2 className="text-2xl font-semibold text-black/70">
-              {cardData.estate_title}
-            </h2>
-            <p className="mt-4 text-black/80 leading-6 font-medium mb-4">
-              {cardData.more_description}
-            </p>
+              <h2 className="text-2xl font-semibold text-black/70">
+                {cardData.estate_title}
+              </h2>
+              <p className="mt-4 text-black/80 leading-6 font-medium mb-4">
+                {cardData.more_description}
+              </p>
             </div>
             <div className="flex justify-between items-center">
               <div>
@@ -222,6 +226,52 @@ const ViewProperty = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="mt-6 bg-white border border-black/20 p-6 rounded-xl grid gap-10 grid-cols-10 h-full">
+        <div className="col-span-3 flex flex-col gap-10">
+          <div className="border-2 rounded-xl p-4 flex flex-col gap-5 justify-between">
+            <h2 className="text-black/80 font-bold text-2xl">Agent details</h2>
+            <h3 className="text-black/80 font-bold text-xl">Naimur F</h3>
+            <button className="btn bg-teal-600 text-white text-xl hover:bg-teal-600/90 w-full">
+              <FiPhoneCall className="mr-2" />
+              Contact Agent
+            </button>
+          </div>
+          <div className="border-2 rounded-xl p-4 flex flex-col gap-5 justify-between">
+            <h2 className="text-black/80 font-bold text-2xl">
+              Inspection time
+            </h2>
+            <h3 className="text-black/80 font-bold text-lg">
+              Inspection and auctions are still happening.
+            </h3>
+            <h3 className="text-black/80 font-bold text-xl">
+              Sunday, 20 April, 10:00 AM - 10:00 PM
+            </h3>
+            <button className="btn bg-teal-600 text-white text-xl hover:bg-teal-600/90 w-full">
+              <SlCalender className="mr-2" />
+              Add to calender
+            </button>
+          </div>
+        </div>
+        <div className="col-span-7 overflow-hidden h-[32rem] rounded-xl border-2">
+          <MapContainer
+            center={[51.505, -0.09]}
+            zoom={13}
+            scrollWheelZoom={false}
+            className="w-full h-full"
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              className="w-full h-full"
+            />
+            <Marker position={[51.505, -0.09]}>
+              <Popup>
+                A pretty CSS3 popup. <br /> Easily customizable.
+              </Popup>
+            </Marker>
+          </MapContainer>
         </div>
       </div>
     </div>

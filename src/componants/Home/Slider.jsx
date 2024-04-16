@@ -43,13 +43,13 @@ const Slider = ({slidersData}) => {
             {/* arrow left */}
             <button
               onClick={prevSlider}
-              className="flex justify-center items-center bg-white/30 hover:bg-white/20 rounded-full p-4"
+              className="flex justify-center items-center bg-black/30 backdrop-blur-sm hover:bg-white/20 rounded-full p-4"
             >
               <svg
                 viewBox="0 0 1024 1024"
                 className="w-4 h-4 md:w-6 md:h-6 icon"
                 xmlns="http://www.w3.org/2000/svg"
-                fill="#000000"
+                fill="#ffffffaf"
               >
                 <g strokeWidth="0"></g>
                 <g
@@ -59,7 +59,7 @@ const Slider = ({slidersData}) => {
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   <path
-                    fill="#000000"
+                    fill="#ffffffaf"
                     d="M685.248 104.704a64 64 0 010 90.496L368.448 512l316.8 316.8a64 64 0 01-90.496 90.496L232.704 557.248a64 64 0 010-90.496l362.048-362.048a64 64 0 0190.496 0z"
                   ></path>
                 </g>
@@ -68,13 +68,13 @@ const Slider = ({slidersData}) => {
             {/* arrow right */}
             <button
               onClick={nextSlider}
-              className="flex justify-center items-center bg-white/30 hover:bg-white/20 rounded-full p-4"
+              className="flex justify-center items-center bg-black/30 backdrop-blur-sm hover:bg-white/20 rounded-full p-4"
             >
               <svg
                 viewBox="0 0 1024 1024"
                 className="w-4 h-4 md:w-6 md:h-6 icon"
                 xmlns="http://www.w3.org/2000/svg"
-                fill="#000000"
+                fill="#fff"
                 transform="rotate(180)"
               >
                 <g strokeWidth="0"></g>
@@ -85,7 +85,7 @@ const Slider = ({slidersData}) => {
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   <path
-                    fill="#00000"
+                    fill="#ffffffaf"
                     d="M685.248 104.704a64 64 0 010 90.496L368.448 512l316.8 316.8a64 64 0 01-90.496 90.496L232.704 557.248a64 64 0 010-90.496l362.048-362.048a64 64 0 0190.496 0z"
                   ></path>
                 </g>
@@ -93,7 +93,7 @@ const Slider = ({slidersData}) => {
             </button>
           </div>
           {/* text container here */}
-          <div className="w-1/2 p-6 top-[20%] text-teal-100 opacity-80 absolute drop-shadow-lg rounded-lg bg-[#00000032] h-fit">
+          <div className="w-1/2 p-6 top-[20%] text-teal-100 opacity-80 absolute drop-shadow-lg rounded-lg bg-black/20 border border-white/20 backdrop-blur-sm h-fit">
             <h1 className="lg:text-5xl font-bold mb-3">
               {slidersData[currentSlider].title}
             </h1>
