@@ -8,6 +8,7 @@ import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.init";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 export const ContextData = createContext(null);
 
@@ -29,26 +30,17 @@ const AuthProvider = ({ children }) => {
         }
       });
   };
-  // Login
+  // Login with email
   const login = (email, password) => {
     setLoading(true);
-    signInWithEmailAndPassword(auth, email, password)
-      .then((result) => {
-        if (result) {
-          success("Login successful!");
-        }
-      })
-      .catch((error) => {
-        if (error) {
-          notify("Invalid email or password!");
-        }
-      });
+
   };
+
   // Observer
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
-      setLoading(false)
+      setLoading(false);
     });
 
     return () => {

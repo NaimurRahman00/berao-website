@@ -1,30 +1,82 @@
 import { useContext, useEffect, useState } from "react";
 import { FaGithub, FaRegEye } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ContextData } from "../../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { PiEyeClosed } from "react-icons/pi";
+import auth from "../../firebase/firebase.init";
+import {
+  GithubAuthProvider,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { ToastContainer } from "react-toastify";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { login } = useContext(ContextData);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { success,notify } = useContext(ContextData);
+
+  // Google auth
+  const googleProvider = new GoogleAuthProvider();
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, googleProvider)
+      .then(() => {
+        // navigate after login
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
+  };
+
+  //  Github auth
+  const githubProvider = new GithubAuthProvider();
+
+  const handleGithubSignIn = () => {
+    signInWithPopup(auth, githubProvider)
+      .then(() => {
+        // navigate after login
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
+  };
 
   // Dynamic title
   useEffect(() => {
     document.title = "Berao | Log In";
   }, []);
 
+  // form
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
-
-    login(email, password);
+    login(email, password)
+    signInWithEmailAndPassword(auth, email, password)
+    .then((result) => {
+      if (result) {
+        success("Login successful!");
+      }
+      navigate(location?.state ? location.state : "/");
+    })
+    .catch((error) => {
+      if (error) {
+        notify("Invalid email or password!");
+      }
+  });
   };
-
-
+  
+  // if(currentUser){
+  //   navigate(location?.state ? location.state : "/")
+  // }
 
   return (
     <div className="h-[100vh] flex items-center justify-center bg-gradient-to-tl from-green-500 from-20% via-emerald-600 via-50% to-teal-600 to-80% backdrop-blur-3xl">
@@ -71,17 +123,16 @@ const Login = () => {
               <div className="relative">
                 <input
                   className="w-[80%] text-white/80 rounded-full bg-black/80 px-6 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 md:w-full"
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   name="password"
                   required
                 />
-                <span onClick={()=> setShowPassword(!showPassword)} className="absolute text-xl text-white top-1/2 -translate-y-1/2 right-5">
-                  {
-                    showPassword? <FaRegEye /> : <PiEyeClosed />
-                    
-                  }
-
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute text-xl text-white top-1/2 -translate-y-1/2 right-5"
+                >
+                  {showPassword ? <FaRegEye /> : <PiEyeClosed />}
                 </span>
               </div>
               <p className="text-emerald-200 hover:underline cursor-pointer text-end">
@@ -96,11 +147,17 @@ const Login = () => {
 
               <div className="flex justify-center text-3xl gap-4 mt-6">
                 {/* sign with google */}
-                <div className="bg-white p-2 rounded-full hover:scale-105 transition-all cursor-pointer">
+                <div
+                  onClick={handleGoogleSignIn}
+                  className="bg-white p-2 rounded-full hover:scale-105 transition-all cursor-pointer"
+                >
                   <FcGoogle />
                 </div>
                 {/* sign with github */}
-                <div className="bg-white p-2 rounded-full hover:scale-105 transition-all cursor-pointer">
+                <div
+                  onClick={handleGithubSignIn}
+                  className="bg-white p-2 rounded-full hover:scale-105 transition-all cursor-pointer"
+                >
                   <FaGithub />
                 </div>
               </div>
@@ -127,7 +184,7 @@ const Login = () => {
                 <h3 className="text-6xl text-white text-end">”</h3>
               </div>
               <p className="text-[14px] text-white/80 mb-10">
-                Do not have an account ?{" "}
+                Don't have an account ?{" "}
                 <Link to="/register" className="text-emerald-200 font-bold">
                   Create one
                 </Link>
@@ -136,6 +193,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

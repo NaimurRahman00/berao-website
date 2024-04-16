@@ -4,6 +4,7 @@ import { ContextData } from "../provider/AuthProvider";
 
 const PrivateRoute = ({ children }) => {
   const location = useLocation();
+  
  
   const { currentUser, loading } = useContext(ContextData);
 

@@ -1,22 +1,29 @@
-import { useContext, useEffect } from "react";
-import { FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { FaRegEye } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ContextData } from "../../provider/AuthProvider";
-import Navbar from "../NavBar/Navbar";
+import { PiEyeClosed } from "react-icons/pi";
+import { ToastContainer } from "react-toastify";
 
 const Register = () => {
   const { register, notify } = useContext(ContextData);
+  const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    // Dynamic title
-    useEffect(()=> {
-      document.title='Berao | Register'
-    },[])
+  // Dynamic title
+  useEffect(() => {
+    document.title = "Berao | Register";
+  }, []);
 
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+    const name = form.get("name");
+    const photoUrl = form.get("photoUrl");
+    console.log(email, name, photoUrl, password);
 
     if (!/^.{6,}$/.test(password)) {
       return notify("Password length must minimum 6 letter!");
@@ -29,103 +36,135 @@ const Register = () => {
     }
 
     register(email, password);
+
+    // navigate after login
+    navigate(location?.state ? location.state : "/");
   };
 
   return (
-    <div className="flex h-screen items-center justify-center bg-[#8EA7E9]/20 p-6 md:p-0">
-      <Navbar></Navbar>
-      <div className="flex h-full w-full overflow-hidden rounded-xl shadow-md  md:h-[90%] md:w-[80%] lg:h-[80%]">
-        {/* register design side  */}
-        <div className="relative hidden h-full items-center justify-center bg-[#8EA7E9] md:flex md:w-[60%] lg:w-[40%]">
-          <div className="absolute -top-2 left-[20%] h-16 w-16 rounded-full bg-gradient-to-br  from-white via-[#9eb6f8] to-[#6585dd]"></div>
-          <div className="absolute bottom-[18%] left-[20%] h-20 w-20 rounded-full bg-gradient-to-br  from-white via-[#9eb6f8] to-[#6585dd]"></div>
-          <div className="absolute -right-7 top-[50%] h-14 w-14 -translate-y-1/2 rounded-full bg-gradient-to-br from-white via-[#9eb6f8] to-[#6585dd] transition-all"></div>
-          <div className="absolute left-[50%] top-[22%] h-24 w-24 -translate-x-1/2 rounded-full  bg-gradient-to-br from-white via-[#9eb6f8] to-[#6585dd]"></div>
-          <div className="space-y-2 text-center">
-            <h2 className="text-3xl font-medium text-white/80 ">
-              Welcome to Berao
-            </h2>
-            <p className="animate-pulse text-sm text-white/60">
-              Please Enter You Information
-            </p>
-          </div>
-        </div>
-        {/* input side  */}
-        <div className="flex w-full flex-col justify-center bg-white py-10 lg:w-[60%]">
-          <h2 className="pb-8 text-center text-3xl font-bold text-[#8EA7E9]">
-            Registration Here
-          </h2>
+    <div className="h-[100vh] flex items-center justify-center bg-gradient-to-tr from-emerald-600 from-10% via-teal-600 via-30% to-cyan-600/90 to-80% backdrop-blur-3xl">
+      <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-white/50"></div>
+      <div className="flex w-[100%] mx-auto max-w-[1400px] items-center justify-center p-6 md:p-0 relative">
+        <div className="flex px-16 h-full w-full rounded-3xl shadow-lg shadow-black/20 bg-black/35 z-20 md:h-[90%] md:w-[80%] lg:h-[85%] backdrop-blur-md border-black/20 border">
+          {/* input side  */}
           <form
             onSubmit={handleRegister}
-            className="flex  w-full flex-col items-center justify-center gap-4"
+            className="flex ps-20 py-20 w-full flex-col justify-end lg:w-[65%] rounded-2xl"
           >
-            <input
-              className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]"
-              type="text"
-              placeholder="Name"
-              name="name"
-              required
-            />
-            <input
-              className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]"
-              type="email"
-              placeholder="Email"
-              name="email"
-              required
-            />
-            <input
-              className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]"
-              type="text"
-              placeholder="Photo Url"
-              name="photoUrl"
-              required
-            />
-            <input
-              className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]"
-              type="text"
-              placeholder="Password"
-              name="password"
-              required
-            />
-            <p className="text-[14px] text-gray-400">
-              Already have an account ?{" "}
-              <Link to="/login" className="text-[#8EA7E9] ">
-                Log In
+            <div className="absolute flex items-center top-10 left-10">
+              <Link to="/" className="text-3xl font-bold text-white/80">
+                Berao
               </Link>
-            </p>
-            <input
-              className="w-[80%] rounded-lg bg-[#8EA7E9] px-6 py-2 font-medium text-white md:w-[60%]"
-              type="submit"
-            />
-          </form>
-          {/* divider  */}
-          <div className="my-8 flex items-center px-8">
-            <hr className="flex-1" />
-            <div className="mx-4 text-gray-400">OR</div>
-            <hr className="flex-1" />
-          </div>
-          <div className="flex justify-center">
-            {/* sign with google */}
-            <div className="mx-auto flex h-[50px] items-center overflow-hidden rounded-full shadow-md duration-300 hover:scale-95 hover:shadow">
-              <div className="flex h-full w-[50%] items-center bg-[#8EA7E9] pl-4 text-sm text-white">
-                Sign With
-              </div>
-              <span className="right-0 top-0 h-0 w-0 -rotate-90 border-b-[50px] border-r-[50px] border-b-transparent border-r-[#8EA7E9] group-hover:hidden"></span>
-              <span className="pr-4 text-4xl font-bold text-[#8EA7E9]">G+</span>
+              <Link
+                to="/"
+                className="relative inline-flex items-center justify-center p-4 px-4 py-1 overflow-hidden font-medium text-black/80 rounded-full shadow-2xl group mx-5 hover:scale-105 transition"
+              >
+                <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-500 bg-emerald-600 rounded-full blur-md ease"></span>
+                <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
+                  <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-green-500 rounded-full blur-md"></span>
+                  <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-teal-500 rounded-full blur-md"></span>
+                </span>
+                <span className="relative text-black/80 font-bold">Home</span>
+              </Link>
             </div>
-            {/* sign with google */}
-            <div className="mx-auto flex h-[50px] items-center overflow-hidden rounded-full shadow-md duration-300 hover:scale-95 hover:shadow">
-              <div className="flex h-full w-[50%] items-center bg-gray-600 pl-4 text-sm text-white">
-                Sign With
+            <div className="flex h-[90%] w-[85%] flex-col justify-center gap-3">
+              <h1 className="text-white/90 text-4xl font-medium">
+                Hi,Welcome to Berao
+              </h1>
+              <h2 className="pb-4 text-lg text-white/80">
+                Register our website
+              </h2>
+              {/* Name input */}
+              <input
+                className="w-[80%] text-white/80 bg-black/80 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 md:w-full"
+                type="text"
+                placeholder="Name"
+                name="name"
+                required
+              />
+              {/* Email input */}
+              <input
+                className="w-[80%] text-white/80 bg-black/80 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 md:w-full"
+                type="email"
+                placeholder="Email"
+                name="email"
+                required
+              />
+              {/* Photo url input */}
+              <input
+                className="w-[80%] text-white/80 bg-black/80 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 md:w-full mt-4"
+                type="text"
+                placeholder="Photo Url"
+                name="photoUrl"
+                required
+              />
+              {/* Password */}
+              <div className="relative">
+                <input
+                  className="w-[80%] text-white/80 rounded-full bg-black/80 px-6 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 md:w-full"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  name="password"
+                  required
+                />
+                <span
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute text-xl text-white top-1/2 -translate-y-1/2 right-5"
+                >
+                  {showPassword ? <FaRegEye /> : <PiEyeClosed />}
+                </span>
               </div>
-              <span className="right-0 top-0 h-0 w-0 -rotate-90 border-b-[50px] border-r-[50px] border-b-transparent border-r-gray-600 group-hover:hidden"></span>
-              <span className="pr-4 text-4xl font-bold text-gray-600">
-                <FaGithub />
-              </span>
+              <div className="form-control">
+                <label className="cursor-pointer label">
+                  <span className="label-text text-emerald-300/80">
+                    Remember me
+                  </span>
+                  <input
+                    type="checkbox"
+                    defaultChecked
+                    className="checkbox checkbox-success"
+                  />
+                </label>
+              </div>
+              <input
+                type="submit"
+                name="Sign in"
+                value="Sign in"
+                className="text-black/80 w-full font-bold text-lg btn border-none rounded-full px-5 py-2.5 overflow-hidden group bg-gradient-to-r from-cyan-600 to-emerald-500 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-cyan-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-cyan-400 transition-all ease-out duration-300"
+              ></input>
+            </div>
+          </form>
+          {/* register design side  */}
+          <div className="relative flex flex-col m-10 md:flex md:w-[60%] lg:w-[35%] overflow-hidden">
+            <div className="bg-black rounded-tr-3xl rounded-tl-2xl h-[7%] w-[75%] relative">
+              <div
+                className="size-6 bg-transparent rounded-full absolute -right-6 bottom-0"
+                style={{ boxShadow: "-10px 10px black" }}
+              ></div>
+            </div>
+            <div className="px-10 pt-10 flex items-center justify-end flex-grow flex-col w-full h-[93%] bg-gradient-to-b from-black to-black/25 rounded-b-2xl rounded-tr-3xl overflow-hidden">
+              <div className="z-20 flex-grow">
+                <h2 className="text-4xl font-bold text-white/80 leading-[3rem] pt-5">
+                  A travel lover said that ,
+                </h2>
+                <h3 className="text-6xl text-white mt-10">“</h3>
+                <p className="text-base text-white/80">
+                  The world is a book, and those who do not travel read only a
+                  page.
+                </p>
+                <h3 className="text-6xl text-white text-end">”</h3>
+              </div>
+              <p className="text-[14px] text-white/80 mb-10">
+                Already have an account ?{" "}
+                <Link to="/login" className="text-emerald-200 font-bold">
+                  Log in
+                </Link>
+              </p>
             </div>
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
