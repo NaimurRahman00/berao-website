@@ -1,9 +1,12 @@
-import { useContext, useEffect } from "react";
-import { FaGithub } from "react-icons/fa";
+import { useContext, useEffect, useState } from "react";
+import { FaGithub, FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ContextData } from "../../provider/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
+import { PiEyeClosed } from "react-icons/pi";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { login } = useContext(ContextData);
 
   // Dynamic title
@@ -21,6 +24,8 @@ const Login = () => {
     login(email, password);
   };
 
+
+
   return (
     <div className="h-[100vh] flex items-center justify-center bg-gradient-to-tl from-green-500 from-20% via-emerald-600 via-50% to-teal-600 to-80% backdrop-blur-3xl">
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-white/50"></div>
@@ -31,9 +36,22 @@ const Login = () => {
             onSubmit={handleLogin}
             className="flex ps-20 py-20 w-full flex-col justify-end lg:w-[65%] rounded-2xl"
           >
-            <h2 className="absolute top-10 left-10 text-3xl font-bold text-white/80">
-              Berao
-            </h2>
+            <div className="absolute flex items-center top-10 left-10">
+              <Link to="/" className="text-3xl font-bold text-white/80">
+                Berao
+              </Link>
+              <Link
+                to="/"
+                className="relative inline-flex items-center justify-center p-4 px-4 py-1 overflow-hidden font-medium text-black/80 rounded-full shadow-2xl group mx-5 hover:scale-105 transition"
+              >
+                <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-500 bg-emerald-600 rounded-full blur-md ease"></span>
+                <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
+                  <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-green-500 rounded-full blur-md"></span>
+                  <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-teal-500 rounded-full blur-md"></span>
+                </span>
+                <span className="relative text-black/80 font-bold">Home</span>
+              </Link>
+            </div>
             <div className="flex h-[90%] w-[85%] flex-col justify-center gap-3">
               <h1 className="text-white/90 text-4xl font-medium">
                 Welcome back
@@ -50,61 +68,53 @@ const Login = () => {
                 required
               />
               <p className="text-emerald-200">Password</p>
-              <input
-                className="w-[80%] text-white/80 rounded-full bg-black/80 px-6 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 md:w-full"
-                type="password"
-                placeholder="Password"
-                name="password"
-                required
-              />
-              <p className="text-emerald-200 underline text-end">Forget password</p>
-              {/* <input
-                className="w-[80%] rounded-full bg-emerald-700 px-6 py-2 font-medium text-white md:w-[60%]"
-                type="submit"
-              /> */}
-              <div className="btn border-none relative rounded-full px-5 py-2.5 overflow-hidden group bg-gradient-to-r from-green-500 to-green-500/80 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-emerald-400 transition-all ease-out duration-300">
+              <div className="relative">
+                <input
+                  className="w-[80%] text-white/80 rounded-full bg-black/80 px-6 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 md:w-full"
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Password"
+                  name="password"
+                  required
+                />
+                <span onClick={()=> setShowPassword(!showPassword)} className="absolute text-xl text-white top-1/2 -translate-y-1/2 right-5">
+                  {
+                    showPassword? <FaRegEye /> : <PiEyeClosed />
+                    
+                  }
+
+                </span>
+              </div>
+              <p className="text-emerald-200 hover:underline cursor-pointer text-end">
+                Forget password
+              </p>
               <input
                 type="submit"
                 name="Sign in"
                 value="Sign in"
-                className="text-black/80 font-bold text-lg"
-              >
-              </input>
-                <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-700 blur-lg transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-[40rem] ease"></span>
-              </div>
-              <div className="flex justify-center">
+                className="text-black/80 w-full font-bold text-lg btn border-none rounded-full px-5 py-2.5 overflow-hidden group bg-gradient-to-r from-green-500 to-green-500/80 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-emerald-400 transition-all ease-out duration-300"
+              ></input>
+
+              <div className="flex justify-center text-3xl gap-4 mt-6">
                 {/* sign with google */}
-                <div className="mx-auto flex h-[50px] items-center overflow-hidden rounded-full shadow-md duration-300 hover:scale-95 hover:shadow">
-                  <div className="flex h-full w-[50%] items-center bg-[#8EA7E9] pl-4 text-sm text-white">
-                    Sign With
-                  </div>
-                  <span className="right-0 top-0 h-0 w-0 -rotate-90 border-b-[50px] border-r-[50px] border-b-transparent border-r-[#8EA7E9] group-hover:hidden"></span>
-                  <span className="pr-4 text-4xl font-bold text-[#8EA7E9]">
-                    G+
-                  </span>
+                <div className="bg-white p-2 rounded-full hover:scale-105 transition-all cursor-pointer">
+                  <FcGoogle />
                 </div>
-                {/* sign with google */}
-                <div className="mx-auto flex h-[50px] items-center overflow-hidden rounded-full shadow-md duration-300 hover:scale-95 hover:shadow">
-                  <div className="flex h-full w-[50%] items-center bg-gray-600 pl-4 text-sm text-white">
-                    Sign With
-                  </div>
-                  <span className="right-0 top-0 h-0 w-0 -rotate-90 border-b-[50px] border-r-[50px] border-b-transparent border-r-gray-600 group-hover:hidden"></span>
-                  <span className="pr-4 text-4xl font-bold text-gray-600">
-                    <FaGithub />
-                  </span>
+                {/* sign with github */}
+                <div className="bg-white p-2 rounded-full hover:scale-105 transition-all cursor-pointer">
+                  <FaGithub />
                 </div>
               </div>
             </div>
           </form>
           {/* register design side  */}
           <div className="relative flex flex-col m-10 md:flex md:w-[60%] lg:w-[35%] overflow-hidden">
-            <div className="bg-black rounded-tr-3xl rounded-tl-2xl h-[10%] w-[75%] relative">
+            <div className="bg-black rounded-tr-3xl rounded-tl-2xl h-[7%] w-[75%] relative">
               <div
                 className="size-6 bg-transparent rounded-full absolute -right-6 bottom-0"
                 style={{ boxShadow: "-10px 10px black" }}
               ></div>
             </div>
-            <div className="px-10 pt-10 flex items-center justify-end flex-grow flex-col w-full h-[80%] bg-gradient-to-b from-black to-black/25 rounded-b-2xl rounded-tr-3xl overflow-hidden">
+            <div className="px-10 pt-10 flex items-center justify-end flex-grow flex-col w-full h-[93%] bg-gradient-to-b from-black to-black/25 rounded-b-2xl rounded-tr-3xl overflow-hidden">
               <div className="z-20 flex-grow">
                 <h2 className="text-4xl font-bold text-white/80 leading-[3rem] pt-5">
                   A travel lover said that ,
