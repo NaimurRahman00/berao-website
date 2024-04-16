@@ -23,7 +23,7 @@ const Register = () => {
     const password = form.get("password");
     const name = form.get("name");
     const photoUrl = form.get("photoUrl");
-    console.log(email, name, photoUrl, password);
+  
 
     if (!/^.{6,}$/.test(password)) {
       return notify("Password length must minimum 6 letter!");
@@ -34,8 +34,8 @@ const Register = () => {
     if (!/^(?=.*[a-z]).+$/.test(password)) {
       return notify("Password must have a Lowercase letter!");
     }
-
-    register(email, password);
+ 
+    register(email, password, name, photoUrl);
 
     // navigate after login
     navigate(location?.state ? location.state : "/");

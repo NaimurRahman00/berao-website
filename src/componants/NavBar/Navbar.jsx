@@ -7,9 +7,8 @@ import { ContextData } from "../../provider/AuthProvider";
 const Navbar = () => {
   const [dropDownState, setDropDownState] = useState(false);
   const dropDownMenuRef = useRef();
-  const { currentUser, logOut } = useContext(ContextData);
-  console.log(currentUser);
-
+  const { currentUser, logOut, userPhoto, userName } = useContext(ContextData);
+  console.log(currentUser)
   useEffect(() => {
     const closeDropDown = (e) => {
       if (!dropDownMenuRef?.current?.contains(e?.target)) {
@@ -50,54 +49,73 @@ const Navbar = () => {
       <div className="relative">
         <div className="w-10/12 px-4 py-2 mx-auto max-w-[1400px] flex items-center justify-between">
           <div className="scale-100 cursor-pointer rounded-2xl py-2 text-xl font-semibold text-black transition-all duration-200 hover:scale-110">
-            <h2 className="text-teal-700 font-extrabold text-3xl">Berao</h2>
+            <Link to="/" className="font-extrabold text-3xl text-transparent bg-clip-text bg-gradient-to-br from-emerald-600 to-blue-400">
+              Berao
+            </Link>
           </div>
           <ul className="hidden items-center gap-4 justify-between md:flex text-white">
             <NavLink
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "group flex cursor-pointer flex-col bg-teal-600 px-4 pt-1 py-0.5 rounded-full text-white"
-                  : "group flex cursor-pointer flex-col px-4 pt-1 py-0.5"
+                  ? "group flex cursor-pointer flex-col bg-teal-600 px-4 pt-1 py-0.5 rounded-full text-white relative overflow-hidden"
+                  : "group flex cursor-pointer px-4 pt-1 py-0.5 relative overflow-hidden grayscale rounded-full"
               }
             >
-              Home
-              <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-500 bg-emerald-600 rounded-full blur-md ease"></span>
+              <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
+                <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-green-500 rounded-full blur-md"></span>
+                <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-teal-500 rounded-full blur-md"></span>
+              </span>
+              <span className="relative text-black/80 font-bold">Home</span>
             </NavLink>
             <NavLink
               to="/blog"
               className={({ isActive }) =>
                 isActive
-                  ? "group flex cursor-pointer flex-col bg-teal-600 px-4 pt-1 py-0.5 rounded-full text-white"
-                  : "group flex cursor-pointer flex-col px-4 pt-1 py-0.5"
+                  ? "group flex cursor-pointer flex-col bg-teal-600 px-4 pt-1 py-0.5 rounded-full text-white relative overflow-hidden"
+                  : "group flex cursor-pointer flex-col px-4 pt-1 py-0.5 relative overflow-hidden grayscale rounded-full"
               }
             >
-              Blogs
-              <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-500 bg-emerald-600 rounded-full blur-md ease"></span>
+              <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
+                <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-green-500 rounded-full blur-md"></span>
+                <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-teal-500 rounded-full blur-md"></span>
+              </span>
+              <span className="relative text-black/80 font-bold">Blogs</span>
             </NavLink>
             <NavLink
               to="/package"
               className={({ isActive }) =>
                 isActive
-                  ? "group flex cursor-pointer flex-col bg-teal-600 px-4 pt-1 py-0.5 rounded-full text-white"
-                  : "group flex cursor-pointer flex-col px-4 pt-1 py-0.5"
+                  ? "group flex cursor-pointer flex-col bg-teal-600 px-4 pt-1 py-0.5 rounded-full text-white relative overflow-hidden"
+                  : "group flex cursor-pointer flex-col px-4 pt-1 py-0.5 relative overflow-hidden grayscale rounded-full"
               }
             >
-              Package
-              <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-500 bg-emerald-600 rounded-full blur-md ease"></span>
+              <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
+                <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-green-500 rounded-full blur-md"></span>
+                <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-teal-500 rounded-full blur-md"></span>
+              </span>
+              <span className="relative text-black/80 font-bold">Package</span>
             </NavLink>
             <NavLink
               to="/contact"
               className={({ isActive }) =>
                 isActive
-                  ? "group flex cursor-pointer flex-col bg-teal-600 px-4 pt-1 py-0.5 rounded-full text-white"
-                  : "group flex cursor-pointer flex-col px-4 pt-1 py-0.5"
+                  ? "group flex cursor-pointer flex-col bg-teal-600 px-4 pt-1 py-0.5 rounded-full text-white relative overflow-hidden"
+                  : "group flex cursor-pointer flex-col px-4 pt-1 py-0.5 relative overflow-hidden grayscale rounded-full"
               }
             >
-              Contact
-              <span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-500 bg-emerald-600 rounded-full blur-md ease"></span>
+              <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
+                <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-green-500 rounded-full blur-md"></span>
+                <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-teal-500 rounded-full blur-md"></span>
+              </span>
+              <span className="relative text-black/80 font-bold">Contact</span>
             </NavLink>
           </ul>
+
           {currentUser ? (
             <div
               ref={dropDownRef}
@@ -109,12 +127,12 @@ const Navbar = () => {
               >
                 Log out
               </button>
-              <button onClick={() => setOpen((prev) => !prev)}>
+              <button className="tooltip tooltip-bottom tooltip-accent" data-tip={userName || currentUser.displayName } onClick={() => setOpen((prev) => !prev)}>
                 <img
                   width={40}
                   height={40}
                   className="size-10 rounded-full bg-slate-500 object-cover duration-500 hover:scale-x-[98%] hover:opacity-80"
-                  src="https://source.unsplash.com/300x300/?profile"
+                  src={currentUser?.photoURL || userPhoto}
                   alt="avatar drop down navigate ui"
                 />
               </button>

@@ -8,21 +8,24 @@ import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.init";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
 
 export const ContextData = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
+  const [userPhoto, setUserPhoto] = useState(null);
+  const [userName, setUserName] = useState(null);
   const [loading, setLoading] = useState(true);
 
   // Registration
-  const register = (email, password) => {
+  const register = (email, password, name, photoURL) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         if (result) {
           success("Registration successful!");
         }
+        setUserPhoto(photoURL);
+        setUserName(name)
       })
       .catch((error) => {
         if (error) {
@@ -33,7 +36,6 @@ const AuthProvider = ({ children }) => {
   // Login with email
   const login = (email, password) => {
     setLoading(true);
-
   };
 
   // Observer
@@ -73,6 +75,8 @@ const AuthProvider = ({ children }) => {
     notify,
     success,
     loading,
+    userPhoto,
+    userName
   };
 
   return (
