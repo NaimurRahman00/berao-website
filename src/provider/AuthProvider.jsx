@@ -3,6 +3,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.init";
@@ -18,7 +19,6 @@ const AuthProvider = ({ children }) => {
   const [userEmail, setUserEmail] = useState(null);
   const [loading, setLoading] = useState(true);
 
-
   // Registration
   const register = (email, password, name, photoURL) => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
         }
         setUserPhoto(photoURL);
         setUserName(name);
-        setUserEmail(email)
+        setUserEmail(email);
       })
       .catch((error) => {
         if (error) {
@@ -39,6 +39,20 @@ const AuthProvider = ({ children }) => {
   // Login with email
   const login = (email, password) => {
     setLoading(true);
+  };
+
+  // Update profile
+  const update = (name, photoURL, setOpenModal2) => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photoURL,
+    })
+      .then(() => {
+        setUserName(name);
+        success("Profile updated");
+        setOpenModal2(false);
+      })
+      .catch(() => {});
   };
 
   // Observer
@@ -70,16 +84,16 @@ const AuthProvider = ({ children }) => {
     });
   };
 
-    // Modal
-    const [openModal, setOpenModal] = useState(false);
-    useEffect(() => {
-      if (openModal) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflowY = "auto";
-      }
-      return () => (document.body.style.overflow = "auto");
-    }, [openModal]);
+  // Modal
+  const [openModal, setOpenModal] = useState(false);
+  useEffect(() => {
+    if (openModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+    return () => (document.body.style.overflow = "auto");
+  }, [openModal]);
 
   const authInfo = {
     login,
@@ -93,7 +107,8 @@ const AuthProvider = ({ children }) => {
     userName,
     openModal,
     setOpenModal,
-    userEmail
+    userEmail,
+    update
   };
 
   return (

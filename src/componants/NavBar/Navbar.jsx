@@ -8,7 +8,6 @@ const Navbar = () => {
   const [dropDownState, setDropDownState] = useState(false);
   const dropDownMenuRef = useRef();
   const { currentUser, logOut, userPhoto, userName, setOpenModal } = useContext(ContextData);
-  console.log(currentUser);
   useEffect(() => {
     const closeDropDown = (e) => {
       if (!dropDownMenuRef?.current?.contains(e?.target)) {

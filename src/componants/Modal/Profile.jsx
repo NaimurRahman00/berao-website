@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ContextData } from "../../provider/AuthProvider";
 
 const Profile = () => {
-
+  const [openModal2, setOpenModal2] = useState(false);
+  const { update} = useContext(ContextData);
   const {
     openModal,
     setOpenModal,
@@ -217,6 +218,18 @@ const Profile = () => {
     },
   ];
 
+  // Update Profile
+  const handleUpdateUserProfile = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const name = form.get("name");
+    const photoUrl = form.get("photoUrl");
+
+    update( name, photoUrl, setOpenModal2);
+
+    // // navigate after login
+    // navigate(location?.state ? location.state : "/");
+  };
 
   return (
     <div>
@@ -286,7 +299,7 @@ const Profile = () => {
                 Email: {userEmail || currentUser?.email}
               </p>
               <p className="pb-2 text-wrap text-start text-sm text-white/70">
-                Photo URL: {userPhoto || currentUser?.photoURL}
+                Photo URL: {currentUser?.photoURL || userPhoto}
               </p>
               {/* social icons  */}
               <div className="flex justify-between gap-4 py-2">
@@ -299,13 +312,84 @@ const Profile = () => {
                   </div>
                 ))}
               </div>
-              <button 
-              onClick={() => setOpenModal2(true)}
-              className="w-[80%] rounded-full py-2 font-medium text-gray-400 shadow-[0px_0px_10px_#E2DADA] duration-500 hover:scale-95  hover:bg-green-500 hover:text-white hover:shadow-xl dark:shadow-[0px_2px_8px_0px_rgba(0,0,0,0.8)]">
+              <button
+                onClick={() => setOpenModal2(true)}
+                className="w-[80%] rounded-full py-2 font-medium text-gray-400 shadow-[0px_0px_10px_#E2DADA] duration-500 hover:scale-95  hover:bg-green-500 hover:text-white hover:shadow-xl dark:shadow-[0px_2px_8px_0px_rgba(0,0,0,0.8)]"
+              >
                 Update Profile
               </button>
             </div>
           </main>
+        </div>
+      </div>
+      {/* Modal 2 */}
+      <div
+        onClick={() => setOpenModal2(false)}
+        className={`fixed z-[100] flex items-center justify-center ${
+          openModal2 ? "opacity-1 visible" : "invisible opacity-0"
+        } inset-0 h-full w-full bg-black/20 backdrop-blur-sm duration-100`}
+      >
+        <div
+          onClick={(e_) => e_.stopPropagation()}
+          className={`absolute rounded-lg bg-[#18181B] drop-shadow-2xl w-[570px] h-[95%] ${
+            openModal2
+              ? "opacity-1 translate-y-0 duration-300"
+              : "-translate-y-20 opacity-0 duration-150"
+          }`}
+        >
+          <form 
+          onSubmit={handleUpdateUserProfile}
+          className="px-5 pb-5 pt-3 lg:pb-10 lg:pt-5 lg:px-10">
+            <svg
+              onClick={() => setOpenModal2(false)}
+              className="mx-auto mr-0 w-10 cursor-pointer fill-black dark:fill-white"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g strokeWidth="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path d="M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z"></path>
+              </g>
+            </svg>
+            <h1 className="pb-8 text-4xl text-white/65 backdrop-blur-sm">Update profile</h1>
+            <div className="space-y-5">
+              <label htmlFor="email_navigate_ui_modal" className="block text-white/80">
+                Name
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  className="block w-full rounded-lg p-3 pl-5 outline-none drop-shadow-lg bg-green-100/80  text-black"
+                />
+              </div>
+              <label htmlFor="password_navigate_ui_modal" className="block text-white/80">
+                Photo URL
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  name="photoUrl"
+                  placeholder="Photo URL"
+                  className="block w-full rounded-lg p-3 pl-5 outline-none drop-shadow-lg text-black bg-green-100/80"
+                />
+              </div>
+            </div>
+            {/* button type will be submit for handling form submission*/}
+            <input
+              type="submit"
+              name="submit"
+              value="CONFIRM"
+              className="relative py-2.5 px-5 rounded-lg mt-6 bg-green-500/80 font-bold drop-shadow-lg hover:bg-green-500"
+            ></input>
+          </form>
         </div>
       </div>
     </div>
