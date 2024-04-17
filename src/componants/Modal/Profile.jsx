@@ -331,7 +331,7 @@ const Profile = () => {
       >
         <div
           onClick={(e_) => e_.stopPropagation()}
-          className={`absolute rounded-lg bg-[#18181B] drop-shadow-2xl w-[570px] h-[95%] ${
+          className={`absolute rounded-lg bg-[#18181B] drop-shadow-2xl w-[90%] md:w-[570px] h-[95%] ${
             openModal2
               ? "opacity-1 translate-y-0 duration-300"
               : "-translate-y-20 opacity-0 duration-150"

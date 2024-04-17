@@ -8,9 +8,9 @@ const Blog = () => {
   },[])
 
   return (
-    <div className="w-10/12 max-w-[1400px] mx-auto pt-24">
+    <div className="w-[95%] md:w-[90%] lg:w-10/12 max-w-[1400px] mx-auto pt-24">
       {/* Banner part */}
-      <div className="grid grid-cols-10 gap-10">
+      <div className="md:grid grid-cols-10 md:gap-5 lg:gap-10">
         <div className="col-span-7 flex flex-col gap-10">
           <div className="rounded-2xl overflow-hidden relative">
             <img
@@ -21,7 +21,7 @@ const Blog = () => {
             <h2 className="absolute top-5 left-5 rounded-md px-4 py-1 bg-black/50 text-white">
               Resort
             </h2>
-            <div className="absolute w-11/12 text-white/80 left-10 bottom-5 z-10">
+            <div className="absolute w-11/12 text-white/80 left-6 md:left-10 bottom-0 md:bottom-5 z-10">
               <div className="flex gap-4 items-center">
                 <div className="avatar placeholder">
                   <div className="bg-neutral text-neutral-content rounded-full w-10">
@@ -34,11 +34,11 @@ const Blog = () => {
                 </div>
               </div>
               <div className="my-5 space-y-3">
-                <h2 className="text-2xl font-bold">
+                <h2 className="text-lg md:text-2xl font-bold">
                   Luxurious seaside escape with private beach, spa, and gourmet
                   dining.
                 </h2>
-                <p>
+                <p className="hidden lg:flex">
                   The resort’s commitment to excellence is reflected in its
                   attentive service, ensuring a bespoke experience for every
                   visitor. Whether seeking a peaceful retreat or an opulent
@@ -50,8 +50,8 @@ const Blog = () => {
             </div>
             <div className="absolute top-0 h-full w-full bg-gradient-to-t from-black/50"></div>
           </div>
-          <div className="flex justify-between items-center">
-            <h2 className="text-5xl font-bold text-black/90">
+          <div className="flex flex-wrap mb-4 md:mb-0 md:gap-6 lg:gap-0 lg:flex-nowrap justify-between items-center">
+            <h2 className="text-2xl mb-4 md:mb-0 md:text-5xl font-bold text-black/90">
               Our Honorable Customers
             </h2>
             <div className="avatar-group -space-x-6 rtl:space-x-reverse">
@@ -110,7 +110,7 @@ const Blog = () => {
                   The Historic District with modern amenities and professional
                   service.
                 </h2>
-                <p className="text-xs">
+                <p className="text-xs hidden lg:flex">
                   The hotel features well-appointed conference rooms, a
                   state-of-the-art fitness center, is designed to provide an
                   unparalleled experience of comfort and sophistication.
@@ -144,7 +144,7 @@ const Blog = () => {
                   Exclusive mountain getaway with ski-in/ski-out access and cozy
                   amenities.
                 </h2>
-                <p className="text-xs">
+                <p className="text-xs  hidden lg:flex">
                   The rental spans 2000 sq ft, providing ample space for
                   relaxation and adventure. Guests can unwind in comfort while
                   enjoying the breathtaking landscape and the retreat’s
@@ -158,17 +158,19 @@ const Blog = () => {
         </div>
       </div>
       {/* Body part */}
-      <div className="grid grid-cols-10 my-10 mt-36">
+      <div className="md:grid grid-cols-10 my-10 lg:mt-36">
+        <h2 className="text-5xl font-bold text-center py-5 md:hidden">More blogs</h2>
         <div className="col-span-7 flex flex-col gap-10">
-          <div className="flex gap-10">
-            <div className="rounded-2xl relative overflow-hidden w-[30%]">
+          {/* card 1 */}
+          <div className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl">
+            <div className="rounded-2xl relative overflow-hidden w-full md:w-[30%]">
               <img
                 src="https://source.unsplash.com/650x650/?motel"
                 alt=""
                 className="rounded-2xl"
               />
             </div>
-            <div className="flex flex-col justify-between pr-10 w-[70%]">
+            <div className="flex flex-col justify-between md:pr-10 w-full gap-4 md:gap-0 md:w-[70%]">
               <div className="space-y-3">
                 <h2 className="text-2xl text-black/70 font-bold">
                   Exclusive mountain getaway with ski-in/ski-out access and cozy
@@ -202,15 +204,15 @@ const Blog = () => {
             </div>
           </div>
           {/* card 2 */}
-          <div className="flex gap-10">
-            <div className="rounded-2xl relative overflow-hidden w-[30%]">
+          <div className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl">
+            <div className="rounded-2xl relative overflow-hidden w-full md:w-[30%]">
               <img
                 src="https://source.unsplash.com/650x650/?hotel"
                 alt=""
                 className="rounded-2xl"
               />
             </div>
-            <div className="flex flex-col justify-between pr-10 w-[70%]">
+            <div className="flex flex-col justify-between md:pr-10 w-full gap-4 md:gap-0 md:w-[70%]">
               <div className="space-y-3">
                 <h2 className="text-2xl text-black/70 font-bold">
                   Exclusive mountain getaway with ski-in/ski-out access and cozy
@@ -244,15 +246,15 @@ const Blog = () => {
             </div>
           </div>
           {/* card 3 */}
-          <div className="flex gap-10">
-            <div className="rounded-2xl relative overflow-hidden w-[30%]">
+          <div className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl">
+            <div className="rounded-2xl relative overflow-hidden w-full md:w-[30%]">
               <img
                 src="https://source.unsplash.com/650x650/?resort-forest"
                 alt=""
                 className="rounded-2xl"
               />
             </div>
-            <div className="flex flex-col justify-between pr-10 w-[70%]">
+            <div className="flex flex-col justify-between md:pr-10 w-full gap-4 md:gap-0 md:w-[70%]">
               <div className="space-y-3">
                 <h2 className="text-2xl text-black/70 font-bold">
                   Exclusive mountain getaway with ski-in/ski-out access and cozy
@@ -286,15 +288,15 @@ const Blog = () => {
             </div>
           </div>
           {/* card 4 */}
-          <div className="flex gap-10">
-            <div className="rounded-2xl relative overflow-hidden w-[30%]">
+          <div className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl">
+            <div className="rounded-2xl relative overflow-hidden w-full md:w-[30%]">
               <img
                 src="https://source.unsplash.com/650x650/?lodge"
                 alt=""
                 className="rounded-2xl"
               />
             </div>
-            <div className="flex flex-col justify-between pr-10 w-[70%]">
+            <div className="flex flex-col justify-between md:pr-10 w-full gap-4 md:gap-0 md:w-[70%]">
               <div className="space-y-3">
                 <h2 className="text-2xl text-black/70 font-bold">
                   Exclusive mountain getaway with ski-in/ski-out access and cozy
@@ -328,7 +330,7 @@ const Blog = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-3 border-l border-black/30 pl-10">
+        <div className="col-span-3 mt-10 md:mt-0 md:border-l border-black/30 w-[95%] md:w-full mx-auto md:pl-10">
           <div className="space-y-6">
             <h2 className="text-2xl font-bold">Trending this week</h2>
             <div className="mt-4 border-l-2 border-black/70 ps-4">

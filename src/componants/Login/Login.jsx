@@ -18,7 +18,7 @@ const Login = () => {
   const { login } = useContext(ContextData);
   const location = useLocation();
   const navigate = useNavigate();
-  const { success,notify } = useContext(ContextData);
+  const { success, notify } = useContext(ContextData);
 
   // Google auth
   const googleProvider = new GoogleAuthProvider();
@@ -59,36 +59,32 @@ const Login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    login(email, password)
+    login(email, password);
     signInWithEmailAndPassword(auth, email, password)
-    .then((result) => {
-      if (result) {
-        success("Login successful!");
-      }
-      navigate(location?.state ? location.state : "/");
-    })
-    .catch((error) => {
-      if (error) {
-        notify("Invalid email or password!");
-      }
-  });
+      .then((result) => {
+        if (result) {
+          success("Login successful!");
+        }
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        if (error) {
+          notify("Invalid email or password!");
+        }
+      });
   };
-  
-  // if(currentUser){
-  //   navigate(location?.state ? location.state : "/")
-  // }
 
   return (
-    <div className="h-[100vh] flex items-center justify-center bg-gradient-to-tl from-green-500 from-20% via-emerald-600 via-50% to-teal-600 to-80% backdrop-blur-3xl">
+    <div className="md:h-[100vh] flex items-center justify-center bg-gradient-to-tl from-green-500 from-20% via-emerald-600 via-50% to-teal-600 to-80% backdrop-blur-3xl">
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-white/50"></div>
-      <div className="flex w-[100%] mx-auto max-w-[1400px] items-center justify-center p-6 md:p-0 relative">
-        <div className="flex px-16 h-full w-full rounded-3xl shadow-lg shadow-black/20 bg-black/35 z-20 md:h-[90%] md:w-[80%] lg:h-[85%] backdrop-blur-md border-black/20 border">
+      <div className="flex w-[100%] mx-auto max-w-[1400px] items-center justify-center p-3 md:p-6 relative">
+        <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-0 lg:px-16 w-full rounded-3xl shadow-lg shadow-black/20 bg-black/35 z-20 md:h-[90%] p-6 md:p-0 md:w-[95%] lg:w-[83%] h-fit  lg:h-[85%] backdrop-blur-md border-black/20 border">
           {/* input side  */}
           <form
             onSubmit={handleLogin}
-            className="flex ps-20 py-20 w-full flex-col justify-end lg:w-[65%] rounded-2xl"
+            className="flex md:ps-10 lg:ps-20 md:py-20 w-[100%] flex-col justify-center md:justify-end lg:w-[65%] rounded-2xl"
           >
-            <div className="absolute flex items-center top-10 left-10">
+            <div className="flex absolute items-center top-10 left-6 md:left-10">
               <Link to="/" className="text-3xl font-bold text-white/80">
                 Berao
               </Link>
@@ -104,16 +100,18 @@ const Login = () => {
                 <span className="relative text-black/80 font-bold">Home</span>
               </Link>
             </div>
-            <div className="flex h-[90%] w-[85%] flex-col justify-center gap-3">
-              <h1 className="text-white/90 text-4xl font-medium">
-                Welcome back
-              </h1>
-              <h2 className="pb-4 text-lg text-white/80">
-                Please, Enter your login information
-              </h2>
+            <div className="flex h-[90%] md:w-[95%] lg:w-[85%] flex-col justify-center gap-3">
+              <div className="absolute md:static top-24">
+                <h1 className="text-white/90 text-4xl font-medium">
+                  Welcome back
+                </h1>
+                <h2 className="pb-4 text-lg text-white/80">
+                  Please, Enter your login information
+                </h2>
+              </div>
               <p className="text-emerald-200">Email</p>
               <input
-                className="w-[80%] text-white/80 bg-black/80 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 md:w-full"
+                className="text-white/80 bg-black/80 rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 md:w-full"
                 type="email"
                 placeholder="Email"
                 name="email"
@@ -122,7 +120,7 @@ const Login = () => {
               <p className="text-emerald-200">Password</p>
               <div className="relative">
                 <input
-                  className="w-[80%] text-white/80 rounded-full bg-black/80 px-6 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 md:w-full"
+                  className="text-white/80 rounded-full bg-black/80 px-6 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/80 w-[100%] md:w-full"
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   name="password"
@@ -164,8 +162,8 @@ const Login = () => {
             </div>
           </form>
           {/* register design side  */}
-          <div className="relative flex flex-col m-10 md:flex md:w-[60%] lg:w-[35%] overflow-hidden">
-            <div className="bg-black rounded-tr-3xl rounded-tl-2xl h-[7%] w-[75%] relative">
+          <div className="relative mt-48 md:mt-[1.5rem] md:flex flex-col md:m-6 lg:m-10 md:w-[50%] lg:w-[35%] overflow-hidden">
+            <div className="hidden md:flex bg-black rounded-tr-3xl rounded-tl-2xl h-[7%] w-[75%] relative">
               <div
                 className="size-6 bg-transparent rounded-full absolute -right-6 bottom-0"
                 style={{ boxShadow: "-10px 10px black" }}

@@ -7,13 +7,14 @@ import { SlCalender } from "react-icons/sl";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 // leaflet
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import "leaflet/dist/leaflet.css"; 
+import "leaflet/dist/leaflet.css";
 
 const ViewProperty = () => {
   const data = useLoaderData();
   const { id } = useParams();
   const cardData = data[id - 1];
-  console.log(cardData);
+  const isMedScreen = window.innerWidth <= 900;
+  const isSmallScreen = window.innerWidth <= 670;
 
   // Dynamic title
   useEffect(() => {
@@ -49,7 +50,7 @@ const ViewProperty = () => {
     return () => clearInterval(intervalId);
   }, [nextSlider, currentSlider]);
   return (
-    <div className="pt-20 bg-transparent w-10/12 mx-auto px-4">
+    <div className="pt-20 bg-transparent md:w-[94%] lg:w-10/12 max-w-[1400px] mx-auto px-4">
       <div className="flex max-w-7xl items-center justify-between py-2">
         <h2 className="text-2xl text-black/80 font-semibold">
           {cardData.estate_title}
@@ -79,7 +80,7 @@ const ViewProperty = () => {
           </li>
         </ul>
       </div>
-      <div className="mt-6 bg-white border border-black/20 p-6 rounded-xl">
+      <div className="mt-6 bg-white border border-black/20 p-3 md:p-6 rounded-xl">
         <div className="flex justify-between items-center px-2">
           <div>
             <h2 className="text-lg font-semibold">{cardData.location}</h2>
@@ -88,14 +89,14 @@ const ViewProperty = () => {
             </p>
           </div>
           <div>
-            <Link className="bg-green-200 px-4 py-2 rounded-md text-teal-600 font-bold text-xl flex items-center gap-4">
+            <Link className="bg-green-200 px-4 py-2 rounded-md text-teal-600 font-bold text-xs md:text-xl flex items-center gap-1 md:gap-4">
               <span>{cardData.status} this property</span> <FaArrowRightLong />
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-10 gap-10 mt-6">
+        <div className="lg:grid grid-cols-10 gap-10 mt-6">
           <div className="col-span-4 rounded-3xl">
-            <div className="relative mx-auto w-full">
+            <div className="relative mx-auto lg:w-full">
               {/* arrow left */}
               <button
                 onClick={prevSlider}
@@ -152,7 +153,13 @@ const ViewProperty = () => {
                 <div
                   className="flex gap-10 transform-gpu duration-500 ease-linear p-2"
                   style={{
-                    transform: `translateX(-${currentSlider * 105.5}%)`,
+                    transform: `translateX(-${
+                      isMedScreen
+                        ? isSmallScreen
+                          ? currentSlider * 106.5
+                          : currentSlider * 103.5
+                        : currentSlider * 105.5
+                    }%)`,
                   }}
                 >
                   {/* sliders */}
@@ -162,7 +169,7 @@ const ViewProperty = () => {
                       height={500}
                       key={inx}
                       src={slide}
-                      className="h-full min-w-[100%] rounded-3xl object-cover overflow-hidden"
+                      className="h-full min-w-[100%] rounded-lg md:rounded-3xl object-cover overflow-hidden"
                       alt={`Slider - ${inx + 1}`}
                     />
                   ))}
@@ -179,20 +186,22 @@ const ViewProperty = () => {
                 {cardData.more_description}
               </p>
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col md:flex-row justify-between md:items-center">
               <div>
                 <h2 className="text-xl text-black/70 mb-3 font-medium flex items-center gap-2">
                   <MdOutlineLocalConvenienceStore />
                   Facilities
                 </h2>
-                {cardData.facilities.map((fac, inx) => (
-                  <span
-                    key={inx}
-                    className="bg-teal-600 px-4 py-2 rounded-md mr-2 text-white/90 font-bold"
-                  >
-                    {fac}
-                  </span>
-                ))}
+                <div className="flex flex-col md:flex-row text-xs">
+                  {cardData.facilities.map((fac, inx) => (
+                    <span
+                      key={inx}
+                      className="bg-teal-600 px-4 py-2 my-2 md:my-0 w-fit rounded-md mr-2 text-white/90 font-bold"
+                    >
+                      {fac}
+                    </span>
+                  ))}
+                </div>
               </div>
               <div>
                 <h2 className="text-xl text-black/70 mb-2 font-medium flex items-center gap-2">
@@ -204,10 +213,10 @@ const ViewProperty = () => {
                 </p>
               </div>
             </div>
-            <div className="mt-8 border-t-2 pt-4 flex gap-16 items-center">
-              <div className="flex flex-col gap-2">
-                <RiMoneyDollarCircleLine className="text-3xl text-black/60" />{" "}
-                <span className="text-xl font-semibold">Potential value</span>{" "}
+            <div className="mt-8 border-t-2 pt-4 flex flex-col md:flex-row gap-4 md:gap-16 md:items-center">
+              <div className="flex md:flex-col gap-2 items-center md:items-start">
+                <RiMoneyDollarCircleLine className="md:text-3xl text-black/60" />{" "}
+                <span className="text-xl font-semibold mr-2 md:mr-0">Potential value</span>{" "}
                 <span className="bg-green-200/60 w-fit rounded-md text-teal-600 font-bold px-3 py-1">
                   High confidence
                 </span>
@@ -228,17 +237,17 @@ const ViewProperty = () => {
           </div>
         </div>
       </div>
-      <div className="mt-6 bg-white border border-black/20 p-6 rounded-xl grid gap-10 grid-cols-10 h-full">
-        <div className="col-span-3 flex flex-col gap-10">
-          <div className="border-2 rounded-xl p-4 flex flex-col gap-5 justify-between">
+      <div className="mt-6 bg-white border border-black/20 p-4 md:p-6 rounded-xl flex flex-col lg:grid gap-5 lg:gap-10 grid-cols-10 h-full">
+        <div className="col-span-3 flex flex-col md:flex-row justify-between gap-4 md:gap-6 lg:gap-10">
+          <div className="border-2 rounded-xl p-4 flex flex-col lg:gap-5 justify-between">
             <h2 className="text-black/80 font-bold text-2xl">Agent details</h2>
-            <h3 className="text-black/80 font-bold text-xl">Naimur F</h3>
-            <button className="btn bg-teal-600 text-white text-xl hover:bg-teal-600/90 w-full">
+            <h3 className="text-black/80 font-bold text-xl">Naimur R.</h3>
+            <button className="btn bg-teal-600 text-white md:text-base lg:text-xl hover:bg-teal-600/90 w-full">
               <FiPhoneCall className="mr-2" />
               Contact Agent
             </button>
           </div>
-          <div className="border-2 rounded-xl p-4 flex flex-col gap-5 justify-between">
+          <div className="border-2 flex-grow rounded-xl p-4 flex flex-col gap-5 justify-between">
             <h2 className="text-black/80 font-bold text-2xl">
               Inspection time
             </h2>

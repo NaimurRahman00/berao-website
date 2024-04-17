@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-const Slider = ({slidersData}) => {
-
+const Slider = ({ slidersData }) => {
   const [currentSlider, setCurrentSlider] = useState(0);
   const prevSlider = () =>
     setCurrentSlider((currentSlider) =>
@@ -36,10 +35,10 @@ const Slider = ({slidersData}) => {
   }
   `}
       </style>
-      <div className="w-full h-60 sm:h-96 md:h-[540px] lg:h-[45.6rem]  flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-40 overflow-hidden zoomIn">
+      <div className="w-full h-[100vh] sm:h-96 md:h-[540px] lg:h-[45.6rem]  flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-40 overflow-hidden zoomIn">
         <div className="relative h-full w-10/12 max-w-[1400px] mx-auto">
           {/* arrow */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-50 px-5">
+          <div className="absolute bottom-1/2 w-full md:w-fit justify-between md:justify-center md:h-fit md:bottom-10 md:left-1/2 md:-translate-x-1/2 flex gap-3 z-50 md:px-5">
             {/* arrow left */}
             <button
               onClick={prevSlider}
@@ -93,21 +92,21 @@ const Slider = ({slidersData}) => {
             </button>
           </div>
           {/* text container here */}
-          <div className="w-1/2 p-6 top-[20%] text-teal-100 opacity-80 absolute drop-shadow-lg rounded-lg bg-black/20 border border-white/20 backdrop-blur-sm h-fit">
-            <h1 className="lg:text-5xl font-bold mb-3">
+          <div className="w-full md:w-1/2 p-2 md:p-6 bottom-[18%] md:top-[20%] text-white/80 opacity-80 absolute drop-shadow-lg rounded-lg bg-black/20 border border-white/20 backdrop-blur-sm h-fit">
+            <h1 className="text-xl md:text-3xl lg:text-5xl font-bold mb-3">
               {slidersData[currentSlider].title}
             </h1>
-            <p className="text-xs text-teal-50 sm:text-sm md:text-base lg:text-2xl">
+            <p className="text-base text-teal-50 md:text-base lg:text-2xl">
               {slidersData[currentSlider].des}
             </p>
           </div>
           {/* slider container */}
-          <div className="w-[17rem] ml-auto overflow-hidden absolute bottom-0 right-0 z-50 px-4 py-10">
+          <div className="w-[9rem] lg:w-[17rem] ml-auto overflow-hidden absolute bottom-0 right-0 z-50 px-4 py-10">
             <div
               className="ease-linear duration-300 flex gap-4 items-center"
               style={{
                 transform: `translateX(-${
-                  currentSlider * (isSmallScreen ? 98 : 266)
+                  currentSlider * (isSmallScreen ? 138 : 266)
                 }px)`,
               }}
             >
@@ -116,7 +115,7 @@ const Slider = ({slidersData}) => {
                 <img
                   key={inx}
                   src={slide.img}
-                  className={`h-[180px] sm:h-[200px] lg:h-[120px] min-w-[90px] lg:min-w-[250px] ${
+                  className={`h-[90px] min-w-[120px] md:h-[90px] lg:h-[130px] lg:min-w-[250px] ${
                     currentSlider - 1 === inx
                       ? "scale-0"
                       : "scale-100 delay-500"

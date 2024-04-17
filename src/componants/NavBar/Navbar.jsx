@@ -45,7 +45,7 @@ const Navbar = () => {
   return (
     <nav className=" text-black mb-12 fixed top-0 left-0 right-0 z-50 bg-[#0000002c] backdrop-blur-md shadow-lg">
       <div className="relative">
-        <div className="w-10/12 px-4 py-2 mx-auto max-w-[1400px] flex items-center justify-between">
+        <div className="w-[95%] md:w-[94%] lg:w-10/12 px-4 py-2 mx-auto max-w-[1400px] flex items-center justify-between">
           <div className="scale-100 cursor-pointer rounded-2xl py-2 text-xl font-semibold text-black transition-all duration-200 hover:scale-110">
             <Link
               to="/"
@@ -54,7 +54,7 @@ const Navbar = () => {
               Berao
             </Link>
           </div>
-          <ul className="hidden items-center gap-4 justify-between md:flex text-white">
+          <ul className="hidden items-center gap-4 justify-between lg:flex text-white">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -124,14 +124,16 @@ const Navbar = () => {
             >
               <button
                 onClick={handleLogOut}
-                className="rounded-full bg-red-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90"
+                className="rounded-full bg-red-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90 hidden md:flex"
               >
                 Log out
               </button>
               <button
-                className="tooltip tooltip-right tooltip-accent"
+                className="tooltip tooltip-left lg:tooltip-right tooltip-accent hidden md:flex"
                 data-tip={userName || currentUser.displayName}
-                onClick={() => setOpen((prev) => !prev)}
+                onClick={() => {
+                  setOpen((prev) => !prev);
+                }}
               >
                 <img
                   width={40}
@@ -157,12 +159,12 @@ const Navbar = () => {
           ) : (
             <div className="flex items-center justify-between gap-5">
               <Link to="/login">
-                <button className="rounded-full bg-teal-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
+                <button className="text-xs md:text-base rounded-full bg-teal-600 px-4 py-1 md:px-6 md:py-2 text-white transition-all duration-300 hover:scale-90">
                   Log In
                 </button>
               </Link>
               <Link to="/register">
-                <button className="rounded-full bg-teal-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">
+                <button className="text-xs md:text-base rounded-full bg-teal-600 px-4 py-1 md:px-6 md:py-2 text-white transition-all duration-300 hover:scale-90">
                   Register
                 </button>
               </Link>
@@ -184,7 +186,7 @@ const Navbar = () => {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="cursor-pointer"
+              className="cursor-pointer text-teal-500"
             >
               {" "}
               <line x1="4" x2="20" y1="12" y2="12" />{" "}
@@ -192,7 +194,7 @@ const Navbar = () => {
               <line x1="4" x2="20" y1="18" y2="18" />{" "}
             </svg>
             {dropDownState && (
-              <ul className=" z-10  gap-2  bg-[#393E46]  absolute right-0 top-11 flex w-[200px] flex-col  rounded-lg   text-base ">
+              <ul className=" z-10  gap-2  bg-[#393E46] absolute right-0 top-11 flex w-[140px] md:w-[200px] flex-col  rounded-xl overflow-hidden text-center text-base ">
                 <NavLink
                   to="/"
                   className="cursor-pointer  px-6 py-2 text-white rounded-t-lg hover:bg-sky-600 "
@@ -200,10 +202,10 @@ const Navbar = () => {
                   Home
                 </NavLink>
                 <NavLink
-                  to="/rooms"
+                  to="/blog"
                   className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 "
                 >
-                  Rooms
+                  Blogs
                 </NavLink>
                 <NavLink
                   to="/package"
@@ -216,6 +218,18 @@ const Navbar = () => {
                   className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 "
                 >
                   Contact
+                </NavLink>
+                <NavLink
+                  onClick={() => setOpenModal(true)}
+                  className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 "
+                >
+                  Profile
+                </NavLink>
+                <NavLink
+                onClick={handleLogOut}
+                  className="cursor-pointer  px-6 py-2 text-white bg-red-600 "
+                >
+                  Log out
                 </NavLink>
               </ul>
             )}
