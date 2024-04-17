@@ -3,16 +3,20 @@ import { FaRegBookmark, FaRegHeart } from "react-icons/fa";
 
 const Blog = () => {
   // Dynamic title
-  useEffect(()=> {
-    document.title='Berao | Blogs'
-  },[])
+  useEffect(() => {
+    document.title = "Berao | Blogs";
+  }, []);
 
   return (
     <div className="w-[95%] md:w-[90%] lg:w-10/12 max-w-[1400px] mx-auto pt-24">
       {/* Banner part */}
       <div className="md:grid grid-cols-10 md:gap-5 lg:gap-10">
         <div className="col-span-7 flex flex-col gap-10">
-          <div className="rounded-2xl overflow-hidden relative">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="700"
+            className="rounded-2xl overflow-hidden relative"
+          >
             <img
               src="https://i.ibb.co/W6N2r0v/resort-blog.jpg"
               alt=""
@@ -83,7 +87,11 @@ const Blog = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-3 flex flex-col gap-10">
+        <div
+          data-aos="fade-left"
+          data-aos-duration="700"
+          className="col-span-3 flex flex-col gap-10"
+        >
           <div className="rounded-2xl relative overflow-hidden h-[20rem]">
             <img
               src="https://i.ibb.co/KxCjc4L/hotel-blog.jpg"
@@ -159,10 +167,16 @@ const Blog = () => {
       </div>
       {/* Body part */}
       <div className="md:grid grid-cols-10 my-10 lg:mt-36">
-        <h2 className="text-5xl font-bold text-center py-5 md:hidden">More blogs</h2>
+        <h2 className="text-5xl font-bold text-center py-5 md:hidden">
+          More blogs
+        </h2>
         <div className="col-span-7 flex flex-col gap-10">
           {/* card 1 */}
-          <div className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl"
+          >
             <div className="rounded-2xl relative overflow-hidden w-full md:w-[30%]">
               <img
                 src="https://source.unsplash.com/650x650/?motel"
@@ -204,7 +218,11 @@ const Blog = () => {
             </div>
           </div>
           {/* card 2 */}
-          <div className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl"
+          >
             <div className="rounded-2xl relative overflow-hidden w-full md:w-[30%]">
               <img
                 src="https://source.unsplash.com/650x650/?hotel"
@@ -246,7 +264,11 @@ const Blog = () => {
             </div>
           </div>
           {/* card 3 */}
-          <div className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl"
+          >
             <div className="rounded-2xl relative overflow-hidden w-full md:w-[30%]">
               <img
                 src="https://source.unsplash.com/650x650/?resort-forest"
@@ -288,7 +310,11 @@ const Blog = () => {
             </div>
           </div>
           {/* card 4 */}
-          <div className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="flex flex-col md:flex-row gap-10 border-2 md:border-none p-6 md:p-0 shadow-xl md:shadow-none rounded-xl"
+          >
             <div className="rounded-2xl relative overflow-hidden w-full md:w-[30%]">
               <img
                 src="https://source.unsplash.com/650x650/?lodge"
@@ -339,15 +365,15 @@ const Blog = () => {
                 Ambiance.
               </h2>
               <div className="flex gap-4 items-center mt-3">
-                  <div className="avatar placeholder">
-                    <div className="bg-neutral text-neutral-content rounded-full w-7">
-                      <img src="https://source.unsplash.com/300x300/?profile-photos-2" />
-                    </div>
-                  </div>
-                  <div>
-                    <h2 className="font-bold">Abul mia</h2>
+                <div className="avatar placeholder">
+                  <div className="bg-neutral text-neutral-content rounded-full w-7">
+                    <img src="https://source.unsplash.com/300x300/?profile-photos-2" />
                   </div>
                 </div>
+                <div>
+                  <h2 className="font-bold">Abul mia</h2>
+                </div>
+              </div>
             </div>
             <div className="mt-4 border-l-2 border-black/70 ps-4">
               <h2 className="font-bold text-black/70">
@@ -355,15 +381,15 @@ const Blog = () => {
                 Ambiance.
               </h2>
               <div className="flex gap-4 items-center mt-3">
-                  <div className="avatar placeholder">
-                    <div className="bg-neutral text-neutral-content rounded-full w-7">
-                      <img src="https://source.unsplash.com/300x300/?profile-photos-3" />
-                    </div>
-                  </div>
-                  <div>
-                    <h2 className="font-bold">Abul mia</h2>
+                <div className="avatar placeholder">
+                  <div className="bg-neutral text-neutral-content rounded-full w-7">
+                    <img src="https://source.unsplash.com/300x300/?profile-photos-3" />
                   </div>
                 </div>
+                <div>
+                  <h2 className="font-bold">Abul mia</h2>
+                </div>
+              </div>
             </div>
             <div className="mt-4 border-l-2 border-black/70 ps-4">
               <h2 className="font-bold text-black/70">
@@ -371,15 +397,15 @@ const Blog = () => {
                 Ambiance.
               </h2>
               <div className="flex gap-4 items-center mt-3">
-                  <div className="avatar placeholder">
-                    <div className="bg-neutral text-neutral-content rounded-full w-7">
-                      <img src="https://source.unsplash.com/300x300/?profile-photos-4" />
-                    </div>
-                  </div>
-                  <div>
-                    <h2 className="font-bold">Abul mia</h2>
+                <div className="avatar placeholder">
+                  <div className="bg-neutral text-neutral-content rounded-full w-7">
+                    <img src="https://source.unsplash.com/300x300/?profile-photos-4" />
                   </div>
                 </div>
+                <div>
+                  <h2 className="font-bold">Abul mia</h2>
+                </div>
+              </div>
             </div>
             <div className="mt-4 border-l-2 border-black/70 ps-4">
               <h2 className="font-bold text-black/70">
@@ -387,15 +413,15 @@ const Blog = () => {
                 Ambiance.
               </h2>
               <div className="flex gap-4 items-center mt-3">
-                  <div className="avatar placeholder">
-                    <div className="bg-neutral text-neutral-content rounded-full w-7">
-                      <img src="https://source.unsplash.com/300x300/?profile-photos-5" />
-                    </div>
-                  </div>
-                  <div>
-                    <h2 className="font-bold">Abul mia</h2>
+                <div className="avatar placeholder">
+                  <div className="bg-neutral text-neutral-content rounded-full w-7">
+                    <img src="https://source.unsplash.com/300x300/?profile-photos-5" />
                   </div>
                 </div>
+                <div>
+                  <h2 className="font-bold">Abul mia</h2>
+                </div>
+              </div>
             </div>
             <div className="mt-4 border-l-2 border-black/70 ps-4">
               <h2 className="font-bold text-black/70">
@@ -403,29 +429,47 @@ const Blog = () => {
                 Ambiance.
               </h2>
               <div className="flex gap-4 items-center mt-3">
-                  <div className="avatar placeholder">
-                    <div className="bg-neutral text-neutral-content rounded-full w-7">
-                      <img src="https://source.unsplash.com/300x300/?profile-photos-6" />
-                    </div>
-                  </div>
-                  <div>
-                    <h2 className="font-bold">Abul mia</h2>
+                <div className="avatar placeholder">
+                  <div className="bg-neutral text-neutral-content rounded-full w-7">
+                    <img src="https://source.unsplash.com/300x300/?profile-photos-6" />
                   </div>
                 </div>
+                <div>
+                  <h2 className="font-bold">Abul mia</h2>
+                </div>
+              </div>
             </div>
             <h2 className="underline text-end mt-5">See the full list</h2>
           </div>
           <div className="mt-10">
-            <h1 className="text-2xl font-bold text-black/80 mb-5">You might like</h1>
+            <h1 className="text-2xl font-bold text-black/80 mb-5">
+              You might like
+            </h1>
             <div className="flex flex-wrap gap-2">
-                <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">Sundarban</p>
-                <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">Cox's bazar</p>
-                <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">Sylhet</p>
-                <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">Bandarban</p>
-                <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">Sajek</p>
-                <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">Saint Martin</p>
-                <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">National Zoo</p>
-                <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">Kuakata</p>
+              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+                Sundarban
+              </p>
+              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+                Cox's bazar
+              </p>
+              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+                Sylhet
+              </p>
+              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+                Bandarban
+              </p>
+              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+                Sajek
+              </p>
+              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+                Saint Martin
+              </p>
+              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+                National Zoo
+              </p>
+              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+                Kuakata
+              </p>
             </div>
           </div>
         </div>

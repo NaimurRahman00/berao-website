@@ -48,6 +48,8 @@ const Navbar = () => {
         <div className="w-[95%] md:w-[94%] lg:w-10/12 px-4 py-2 mx-auto max-w-[1400px] flex items-center justify-between">
           <div className="scale-100 cursor-pointer rounded-2xl py-2 text-xl font-semibold text-black transition-all duration-200 hover:scale-110">
             <Link
+             data-aos="fade-up"
+             data-aos-duration="2000"
               to="/"
               className="font-extrabold text-3xl text-transparent bg-clip-text bg-gradient-to-br from-emerald-600 to-blue-400"
             >

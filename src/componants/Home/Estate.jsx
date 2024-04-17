@@ -13,12 +13,14 @@ const Estate = ({ cardData }) => {
   const isSmallScreen = window.innerWidth <= 600;
   const isMedScreen = window.innerWidth <= 900;
   return (
-    <div className="bg-gradient-to-t from-white to-white-500/20">
+    <div className="">
       <div className="w-10/12 max-w-[1400px] mx-auto py-20 bg-transparent">
         <div>
           <h2 className="text-4xl font-bold text-center text-teal-500">Estate</h2>
         </div>
         <Swiper
+        data-aos="fade-up"
+        data-aos-duration="1000"
           direction={"horizontal"}
           slidesPerView={isSmallScreen ? 1 : isMedScreen ? 2 : 3}
           spaceBetween={10}
@@ -36,10 +38,10 @@ const Estate = ({ cardData }) => {
               className="flex gap-10 justify-center px-2 bg-transparent"
             >
               <div className="mx-auto bg-transparent my-20 h-[32rem] md:h-[37.5rem] w-[22rem] space-y-6 font-sans border border-[#2121214a] rounded-sm shadow-2xl shadow-[#5a5a5a] flex flex-col">
-                <div className="relative flex h-48 w-full justify-center lg:h-[280px]">
+                <div className="relative flex h-48 w-full justify-center lg:h-[280px] bg-transparent">
                   <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
                     {/* love  */}
-                    <div className="flex items-center">
+                    <div className="flex items-center bg-transparent">
                       <svg
                         width={30}
                         className="fill-transparent stroke-white stroke-2 hover:fill-red-500 hover:stroke-red-500 "

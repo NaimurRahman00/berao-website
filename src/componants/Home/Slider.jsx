@@ -92,7 +92,12 @@ const Slider = ({ slidersData }) => {
             </button>
           </div>
           {/* text container here */}
-          <div className="w-full md:w-1/2 p-2 md:p-6 bottom-[18%] md:top-[20%] text-white/80 opacity-80 absolute drop-shadow-lg rounded-lg bg-black/20 border border-white/20 backdrop-blur-sm h-fit">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-duration="1000"
+            className="w-full md:w-1/2 p-2 md:p-6 bottom-[18%] md:top-[20%] text-white/80 opacity-80 absolute drop-shadow-lg rounded-lg bg-black/20 border border-white/20 backdrop-blur-sm h-fit"
+          >
             <h1 className="text-xl md:text-3xl lg:text-5xl font-bold mb-3">
               {slidersData[currentSlider].title}
             </h1>

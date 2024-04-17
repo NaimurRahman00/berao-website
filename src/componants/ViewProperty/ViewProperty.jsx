@@ -238,7 +238,7 @@ const ViewProperty = () => {
         </div>
       </div>
       <div className="mt-6 bg-white border border-black/20 p-4 md:p-6 rounded-xl flex flex-col lg:grid gap-5 lg:gap-10 grid-cols-10 h-full">
-        <div className="col-span-3 flex flex-col md:flex-row justify-between gap-4 md:gap-6 lg:gap-10">
+        <div className="col-span-3 flex flex-col md:flex-row lg:flex-col justify-between gap-4 md:gap-6 lg:gap-10">
           <div className="border-2 rounded-xl p-4 flex flex-col lg:gap-5 justify-between">
             <h2 className="text-black/80 font-bold text-2xl">Agent details</h2>
             <h3 className="text-black/80 font-bold text-xl">Naimur R.</h3>
