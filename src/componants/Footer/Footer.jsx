@@ -15,7 +15,8 @@ const Footer = () => {
       <div className="w-10/12 max-w-[1400px] mx-auto">
         <div className="md:grid grid-cols-10 justify-center items-start gap-10 py-5 lg:py-40 border-b border-white/30 space-y-4 lg:space-y-0">
           <div className="col-span-5 lg:col-span-3">
-            <h1 className="font-extrabold text-2xl mb-3 lg:mb-6 text-teal-700">Berao</h1>
+            <h1 data-aos="zoom-in"
+            data-aos-duration="300"  className="font-extrabold text-3xl mb-3 lg:mb-6 text-transparent bg-clip-text bg-gradient-to-br from-green-500 to-teal-500">Berao</h1>
             <p className="md:w-3/4 lg:w-4/6">
               Berao estate: Luxurious properties, exceptional service, and
               unparalleled living experiences.
@@ -35,28 +36,36 @@ const Footer = () => {
           <div className="row-span-2 col-span-10 lg:col-span-3 text-center lg:text-start">
             <h2 className="uppercase text-lg font-bold mb-6">Socials</h2>
             <div className="flex flex-wrap gap-4 lg:w-5/6 justify-center lg:justify-start">
-              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
+              <Link data-aos="zoom-in"
+            data-aos-duration="300"  className="p-3 rounded-full bg-gradient-to-br from-green-500 to-teal-500 hover:scale-105 transition text-white">
                 <FaFacebookF />
               </Link>
-              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
+              <Link data-aos="zoom-in"
+            data-aos-duration="300" className="p-3 rounded-full bg-gradient-to-br from-green-500 to-teal-500 hover:scale-105 transition text-white">
                 <FaInstagram />
               </Link>
-              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
+              <Link data-aos="zoom-in"
+            data-aos-duration="300" className="p-3 rounded-full bg-gradient-to-br from-green-500 to-teal-500 hover:scale-105 transition text-white">
                 <FaXTwitter />
               </Link>
-              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
+              <Link data-aos="zoom-in"
+            data-aos-duration="300" className="p-3 rounded-full bg-gradient-to-br from-green-500 to-teal-500 hover:scale-105 transition text-white">
                 <FaLinkedinIn />
               </Link>
-              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
+              <Link data-aos="zoom-in"
+            data-aos-duration="300" className="p-3 rounded-full bg-gradient-to-br from-green-500 to-teal-500 hover:scale-105 transition text-white">
                 <FaThreads />
               </Link>
-              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
+              <Link data-aos="zoom-in"
+            data-aos-duration="300" className="p-3 rounded-full bg-gradient-to-br from-green-500 to-teal-500 hover:scale-105 transition text-white">
                 <SlSocialVkontakte />
               </Link>
-              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
+              <Link data-aos="zoom-in"
+            data-aos-duration="300" className="p-3 rounded-full bg-gradient-to-br from-green-500 to-teal-500 hover:scale-105 transition text-white">
                 <SlSocialTumblr />
               </Link>
-              <Link className="p-3 rounded-full bg-emerald-600/80 hover:scale-105 transition text-white">
+              <Link data-aos="zoom-in"
+            data-aos-duration="300" className="p-3 rounded-full bg-gradient-to-br from-green-500 to-teal-500 hover:scale-105 transition text-white">
                 <TiSocialYoutube />
               </Link>
             </div>
@@ -66,7 +75,8 @@ const Footer = () => {
           <h2 className="text-sm text-white/80">
             Copyright @2024 - Berao Estate
           </h2>
-          <a
+          <a data-aos="zoom-in"
+            data-aos-duration="1000"
             href="#_"
             className="relative inline-flex items-center justify-center px-6 lg:px-10 py-4 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group shadow-xl"
           >

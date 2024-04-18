@@ -16,11 +16,10 @@ const Estate = ({ cardData }) => {
     <div className="">
       <div className="w-10/12 max-w-[1400px] mx-auto py-16 bg-transparent">
         <div>
-          <h2 className="text-3xl md:text-6xl font-bold text-center text-green-500">Berao Estate</h2>
+          <h2 data-aos="fade-up"
+              data-aos-duration="1000" className="text-3xl md:text-6xl font-bold text-center text-green-500">Berao Estate</h2>
         </div>
         <Swiper
-        data-aos="fade-up"
-        data-aos-duration="1000"
           direction={"horizontal"}
           slidesPerView={isSmallScreen ? 1 : isMedScreen ? 2 : 3}
           spaceBetween={10}
@@ -37,7 +36,8 @@ const Estate = ({ cardData }) => {
               key={inx}
               className="flex gap-10 justify-center px-2 bg-transparent"
             >
-              <div className="mx-auto bg-transparent my-20 h-[32rem] md:h-[37.5rem] w-[22rem] space-y-6 font-sans border border-[#2121214a] rounded shadow-md shadow-[#5a5a5a] flex flex-col">
+              <div data-aos="zoom-in"
+            data-aos-duration="1000" className="mx-auto bg-transparent my-20 h-[32rem] md:h-[37.5rem] w-[22rem] space-y-6 font-sans border border-[#2121214a] rounded shadow-md shadow-[#5a5a5a] flex flex-col">
                 <div className="relative flex h-48 w-full justify-center lg:h-[280px] bg-transparent">
                   <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
                     {/* love  */}
@@ -86,7 +86,7 @@ const Estate = ({ cardData }) => {
                   <p className="text-xs text-start font-semibold text-gray-400 md:text-sm">
                     {slide.description}
                   </p>
-                  <h2 className="text-start bg-teal-600 px-4 py-1 w-fit rounded-full mt-4 text-white">
+                  <h2 className="text-start bg-gradient-to-br from-green-500 to-teal-500 px-4 py-1 w-fit rounded-full mt-4 text-white">
                     {slide.segment_name}
                   </h2>
                 </div>

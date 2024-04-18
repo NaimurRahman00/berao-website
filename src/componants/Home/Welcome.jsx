@@ -1,4 +1,3 @@
-
 const Welcome = () => {
   return (
     <section className="w-10/12 mx-auto max-w-[1400px] py-12 md:py-24 flex justify-center bg-white flex-col lg:py-32 bg-gradient-to-b from-#52C2FF to-white">
@@ -6,29 +5,36 @@ const Welcome = () => {
         <div className="flex flex-col items-center space-y-4 text-center text-black">
           {/* Text content */}
           <div className="space-y-4">
-            <h1 className="text-3xl mb-10 font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-              Welcome to <span className="text-green-500">Berao Estate</span> 
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className="text-3xl mb-10 font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl"
+            >
+              Welcome to <span className="text-green-500">Berao Estate</span>
             </h1>
-            <p className="mx-auto max-w-[400px]">
-              Explore the wide range of Berao Estate world. Dive
-              into the world of the creativity of Tourism.
+            <p data-aos="fade-up"
+              data-aos-duration="1000" className="mx-auto max-w-[400px]">
+              Explore the wide range of Berao Estate world. Dive into the world
+              of the creativity of Tourism.
             </p>
           </div>
-          <div className="space-x-4">
-          <a
-            href="#_"
-            className="relative inline-flex items-center justify-center px-4 lg:px-10 py-3 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group shadow-xl"
-          >
-            <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
-            <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
-            <span className="relative text-base lg:text-xl">Explore Now</span>
-          </a>
+          <div data-aos="fade-up"
+              data-aos-duration="1000" className="space-x-4">
+            <a
+              href="#_"
+              className="relative inline-flex items-center justify-center px-4 lg:px-10 py-3 overflow-hidden font-mono font-medium tracking-tighter text-white bg-gray-800 rounded-lg group shadow-xl"
+            >
+              <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-500 rounded-full group-hover:w-56 group-hover:h-56"></span>
+              <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-700"></span>
+              <span className="relative text-base lg:text-xl">Explore Now</span>
+            </a>
           </div>
         </div>
       </div>
       {/* Feature Cards */}
       <div className="container md:grid px-4 md:px-6 mt-16 grid-cols-3 flex-wrap justify-center items-center gap-9">
-        <div className="flex flex-col grid-cols-1 items-center text-center text-black">
+        <div data-aos="fade-right"
+              data-aos-duration="1000" className="flex flex-col grid-cols-1 items-center text-center text-black">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={24}
@@ -46,9 +52,13 @@ const Welcome = () => {
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
           </svg>
           <h3 className="text-lg font-semibold">Global Reach</h3>
-          <p className="text-sm">Amazing Hotel, Resort, Guest House and more from all around the world.</p>
+          <p className="text-sm">
+            Amazing Hotel, Resort, Guest House and more from all around the
+            world.
+          </p>
         </div>
-        <div className="flex flex-col grid-cols-1 items-center text-center text-black">
+        <div data-aos="zoom-in"
+            data-aos-duration="1000" className="flex flex-col grid-cols-1 items-center text-center text-black">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={24}
@@ -65,9 +75,12 @@ const Welcome = () => {
             <path d="m13 12-3 5h4l-3 5" />
           </svg>
           <h3 className="text-lg font-semibold">Fast and Efficient Services</h3>
-          <p className="text-sm">Experience lightning fast Service times and care also.</p>
+          <p className="text-sm">
+            Experience lightning fast Service times and care also.
+          </p>
         </div>
-        <div className="flex flex-col grid-cols-1 items-center text-center text-black">
+        <div data-aos="fade-left"
+              data-aos-duration="1000" className="flex flex-col grid-cols-1 items-center text-center text-black">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={24}

@@ -3,7 +3,8 @@ const Subscribe = () => {
     <div className="md:min-h-[600px] w-10/12 mx-auto max-w-[1400px] sm:px-2 px-3 max-h-[800px] py-20 rounded-2xl bg-[#2A3342]">
       <div className="flex justify-center flex-col">
         {/* Beautiful announcement line */}
-        <div className="bg-[#1F2937] mx-auto max-w-[450px] pr-3 pl-1 py-[6px] rounded-full gap-2 flex  items-center text-white">
+        <div data-aos="zoom-in"
+            data-aos-duration="1000" className="bg-[#1F2937] mx-auto max-w-[450px] pr-3 pl-1 py-[6px] rounded-full gap-2 flex  items-center text-white">
           <span className="bg-gradient-to-br from-green-500 to-teal-500 sm:px-3 px-2 sm:py-1 py-[3px] sm:text-base text-sm rounded-full">
             Offer
           </span>
@@ -11,17 +12,29 @@ const Subscribe = () => {
         </div>
         {/* Banner Content */}
         <div className="mt-10 ">
-          <h2 className="text-white lg:text-5xl md:text-4xl sm:text-3xl text-2xl max-w-[600px] mx-auto text-center font-extrabold ">
+          <h2
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="text-white lg:text-5xl md:text-4xl sm:text-3xl text-2xl max-w-[600px] mx-auto text-center font-extrabold "
+          >
             Get 20% discount for new members
           </h2>
-          <p className="lg:text-xl md:text-lg text-[#8896AB] mt-5 max-w-[600px] text-center mx-auto text-sm">
+          <p
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="lg:text-xl md:text-lg text-[#8896AB] mt-5 max-w-[600px] text-center mx-auto text-sm"
+          >
             Join now and enjoy a 20% discount on your first membership!
             Exclusive offer for new members – save big and unlock benefits
             today!
           </p>
           {/* Banner action  */}
           <div className="mt-5 flex md:flex-row max-w-[450px] mx-auto justify-center gap-2 flex-col">
-            <div className="md:ml-auto md:mr-0 lg:w-[55%] relative">
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              className="md:ml-auto md:mr-0 lg:w-[50%] relative"
+            >
               <svg
                 className="absolute mt-[10px] ml-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +52,11 @@ const Subscribe = () => {
                 id=""
               />
             </div>
-            <div className=" md:mr-auto md:ml-0 lg:w-[45%] ">
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="500"
+              className=" md:mr-auto md:ml-0 lg:w-[50%] "
+            >
               <button className="bg-gradient-to-br from-green-500 to-teal-500 hover:scale-95 transition sm:py-3 py-2 sm:text-base text-sm px-18 text-white rounded-lg h-full w-full ">
                 Subscribe
               </button>

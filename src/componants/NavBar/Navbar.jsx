@@ -7,7 +7,8 @@ import { ContextData } from "../../provider/AuthProvider";
 const Navbar = () => {
   const [dropDownState, setDropDownState] = useState(false);
   const dropDownMenuRef = useRef();
-  const { currentUser, logOut, userPhoto, userName, setOpenModal } = useContext(ContextData);
+  const { currentUser, logOut, userPhoto, userName, setOpenModal } =
+    useContext(ContextData);
   useEffect(() => {
     const closeDropDown = (e) => {
       if (!dropDownMenuRef?.current?.contains(e?.target)) {
@@ -48,16 +49,18 @@ const Navbar = () => {
         <div className="w-[95%] md:w-[94%] lg:w-10/12 px-4 py-2 mx-auto max-w-[1400px] flex items-center justify-between">
           <div className="scale-100 cursor-pointer rounded-2xl py-2 text-xl font-semibold text-black transition-all duration-200 hover:scale-110">
             <Link
-             data-aos="fade-up"
-             data-aos-duration="2000"
+              data-aos="fade-up"
+              data-aos-duration="2000"
               to="/"
-              className="font-extrabold text-3xl text-transparent bg-clip-text bg-gradient-to-br from-emerald-600 to-blue-400"
+              className="font-extrabold text-3xl text-transparent bg-clip-text bg-gradient-to-br from-green-500 to-teal-500"
             >
               Berao
             </Link>
           </div>
           <ul className="hidden items-center gap-4 justify-between lg:flex text-white">
             <NavLink
+              data-aos="zoom-in"
+              data-aos-duration="500"
               to="/"
               className={({ isActive }) =>
                 isActive
@@ -73,6 +76,8 @@ const Navbar = () => {
               <span className="relative text-black/80 font-bold">Home</span>
             </NavLink>
             <NavLink
+              data-aos="zoom-in"
+              data-aos-duration="500"
               to="/blog"
               className={({ isActive }) =>
                 isActive
@@ -88,6 +93,8 @@ const Navbar = () => {
               <span className="relative text-black/80 font-bold">Blogs</span>
             </NavLink>
             <NavLink
+              data-aos="zoom-in"
+              data-aos-duration="500"
               to="/package"
               className={({ isActive }) =>
                 isActive
@@ -103,6 +110,8 @@ const Navbar = () => {
               <span className="relative text-black/80 font-bold">Package</span>
             </NavLink>
             <NavLink
+              data-aos="zoom-in"
+              data-aos-duration="500"
               to="/contact"
               className={({ isActive }) =>
                 isActive
@@ -125,12 +134,16 @@ const Navbar = () => {
               className="relative flex items-center gap-6 w-fit text-black"
             >
               <button
+              data-aos="zoom-in"
+              data-aos-duration="500"
                 onClick={handleLogOut}
                 className="rounded-full bg-red-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90 hidden md:flex"
               >
                 Log out
               </button>
               <button
+              data-aos="zoom-in"
+              data-aos-duration="500"
                 className="tooltip tooltip-left lg:tooltip-right tooltip-accent hidden md:flex"
                 data-tip={userName || currentUser.displayName}
                 onClick={() => {
@@ -138,6 +151,7 @@ const Navbar = () => {
                 }}
               >
                 <img
+                
                   width={40}
                   height={40}
                   className="size-10 rounded-full bg-slate-500 object-cover duration-500 hover:scale-x-[98%] hover:opacity-80"
@@ -150,7 +164,11 @@ const Navbar = () => {
                   open ? "visible duration-300" : "invisible"
                 } absolute flex flex-col right-0 top-[3.4rem] z-50 w-[10rem] text-center rounded-sm bg-slate-200 shadow-md`}
               >
-                <Link onClick={() => setOpenModal(true)} className="rounded-sm px-6 py-2 opacity-100 duration-300 bg-gradient-to-tr from-green-400 to-teal-700 text-white/70 font-bold hover:opacity-70">
+                <Link
+                
+                  onClick={() => setOpenModal(true)}
+                  className="rounded-sm px-6 py-2 opacity-100 duration-300 bg-gradient-to-tr from-green-400 to-teal-700 text-white/70 font-bold hover:opacity-70"
+                >
                   Profile
                 </Link>
                 <Link className="rounded-sm px-6 py-2 opacity-100 duration-300 bg-gradient-to-br from-green-400 to-teal-700 border-t border-t-black/40 text-white/70 font-bold hover:opacity-70">
@@ -228,7 +246,7 @@ const Navbar = () => {
                   Profile
                 </NavLink>
                 <NavLink
-                onClick={handleLogOut}
+                  onClick={handleLogOut}
                   className="cursor-pointer  px-6 py-2 text-white bg-red-600 "
                 >
                   Log out

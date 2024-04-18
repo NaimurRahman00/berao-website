@@ -93,9 +93,8 @@ const Slider = ({ slidersData }) => {
           </div>
           {/* text container here */}
           <div
-            data-aos="fade-up"
-            data-aos-anchor-placement="top-bottom"
-            data-aos-duration="1000"
+                        data-aos="zoom-in"
+                        data-aos-duration="500"
             className="w-full md:w-1/2 p-2 md:p-6 bottom-[18%] md:top-[20%] text-white/80 opacity-80 absolute drop-shadow-lg rounded-lg bg-black/20 border border-white/20 backdrop-blur-sm h-fit"
           >
             <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-green-400/60 mb-3">
@@ -118,6 +117,8 @@ const Slider = ({ slidersData }) => {
               {/* sliders */}
               {slidersData.map((slide, inx) => (
                 <img
+                data-aos="zoom-in"
+                data-aos-duration="500"
                   key={inx}
                   src={slide.img}
                   className={`h-[90px] min-w-[120px] md:h-[90px] lg:h-[130px] lg:min-w-[250px] ${
