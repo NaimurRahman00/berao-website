@@ -98,10 +98,10 @@ const Slider = ({ slidersData }) => {
             data-aos-duration="1000"
             className="w-full md:w-1/2 p-2 md:p-6 bottom-[18%] md:top-[20%] text-white/80 opacity-80 absolute drop-shadow-lg rounded-lg bg-black/20 border border-white/20 backdrop-blur-sm h-fit"
           >
-            <h1 className="text-xl md:text-3xl lg:text-5xl font-bold mb-3">
+            <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-green-400/60 mb-3">
               {slidersData[currentSlider].title}
             </h1>
-            <p className="text-base text-teal-50 md:text-base lg:text-2xl">
+            <p className="text-base text-teal-50/60 md:text-base lg:text-2xl">
               {slidersData[currentSlider].des}
             </p>
           </div>
