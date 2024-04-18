@@ -16,7 +16,7 @@ const Estate = ({ cardData }) => {
     <div className="">
       <div className="w-10/12 max-w-[1400px] mx-auto py-16 bg-transparent">
         <div>
-          <h2 className="text-6xl font-bold text-center text-green-500">Berao Estate</h2>
+          <h2 className="text-3xl md:text-6xl font-bold text-center text-green-500">Berao Estate</h2>
         </div>
         <Swiper
         data-aos="fade-up"
