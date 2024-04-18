@@ -51,7 +51,10 @@ const ViewProperty = () => {
   }, [nextSlider, currentSlider]);
   return (
     <div className="pt-20 bg-transparent md:w-[94%] lg:w-10/12 max-w-[1400px] mx-auto px-4">
-      <div className="flex max-w-7xl items-center justify-between py-2">
+      <div data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="300"
+     data-aos-offset="0" className="flex max-w-7xl items-center justify-between py-2">
         <h2 className="text-2xl text-black/80 font-semibold">
           {cardData.estate_title}
         </h2>
@@ -80,7 +83,10 @@ const ViewProperty = () => {
           </li>
         </ul>
       </div>
-      <div className="mt-6 bg-white border border-black/20 p-3 md:p-6 rounded-xl">
+      <div data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="300"
+     data-aos-offset="0" className="mt-6 bg-white border border-black/20 p-3 md:p-6 rounded-xl">
         <div className="flex justify-between items-center px-2">
           <div>
             <h2 className="text-lg font-semibold">{cardData.location}</h2>
@@ -237,7 +243,10 @@ const ViewProperty = () => {
           </div>
         </div>
       </div>
-      <div className="mt-6 bg-white border border-black/20 p-4 md:p-6 rounded-xl flex flex-col lg:grid gap-5 lg:gap-10 grid-cols-10 h-full">
+      <div data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="300"
+     data-aos-offset="0" className="mt-6 bg-white border border-black/20 p-4 md:p-6 rounded-xl flex flex-col lg:grid gap-5 lg:gap-10 grid-cols-10 h-full">
         <div className="col-span-3 flex flex-col md:flex-row lg:flex-col justify-between gap-4 md:gap-6 lg:gap-10">
           <div className="border-2 rounded-xl p-4 flex flex-col lg:gap-5 justify-between">
             <h2 className="text-black/80 font-bold text-2xl">Agent details</h2>

@@ -77,7 +77,10 @@ const Login = () => {
   return (
     <div className="md:h-[100vh] flex items-center justify-center bg-gradient-to-tl from-green-500 from-20% via-emerald-600 via-50% to-teal-600 to-80% backdrop-blur-3xl">
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-white/50"></div>
-      <div className="flex w-[100%] mx-auto max-w-[1400px] items-center justify-center p-3 md:p-6 relative">
+      <div data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="100"
+     data-aos-offset="0" className="flex w-[100%] mx-auto max-w-[1400px] items-center justify-center p-3 md:p-6 relative">
         <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-0 lg:px-16 w-full rounded-3xl shadow-lg shadow-black/20 bg-black/35 z-20 md:h-[90%] p-6 md:p-0 md:w-[95%] lg:w-[83%] h-fit  lg:h-[85%] backdrop-blur-md border-black/20 border">
           {/* input side  */}
           <form
@@ -98,6 +101,17 @@ const Login = () => {
                   <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-teal-500 rounded-full blur-md"></span>
                 </span>
                 <span className="relative text-black/80 font-bold">Home</span>
+              </Link>
+              <Link
+                to="/register"
+                className="relative inline-flex items-center justify-center p-4 px-4 py-1 overflow-hidden font-medium text-black/80 rounded-full shadow-2xl group hover:scale-105 transition"
+              >
+                <span className="absolute top-0 left-0 w-40 h-40 -mt-10 -ml-3 transition-all duration-500 bg-emerald-600 rounded-full blur-md ease"></span>
+                <span className="absolute inset-0 w-full h-full transition duration-700 group-hover:rotate-180 ease">
+                  <span className="absolute bottom-0 left-0 w-24 h-24 -ml-10 bg-green-500 rounded-full blur-md"></span>
+                  <span className="absolute bottom-0 right-0 w-24 h-24 -mr-10 bg-teal-500 rounded-full blur-md"></span>
+                </span>
+                <span className="relative text-black/80 font-bold">Register</span>
               </Link>
             </div>
             <div className="flex h-[90%] md:w-[95%] lg:w-[85%] flex-col justify-center gap-3">
@@ -184,7 +198,7 @@ const Login = () => {
               <p className="text-[14px] text-white/80 mb-10">
                 Don't have an account ?{" "}
                 <Link to="/register" className="text-emerald-200 font-bold">
-                  Create one
+                  Register
                 </Link>
               </p>
             </div>

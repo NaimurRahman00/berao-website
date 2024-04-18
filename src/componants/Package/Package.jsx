@@ -12,12 +12,12 @@ const Package = () => {
   }, []);
   return (
     <div className="w-10/12 mt-20 mx-auto max-w-[1400px]">
-      <div className="text-center font-extrabold text-cyan-500/85 text-5xl my-5 py-5">
+      <div data-aos="fade-up" className="text-center font-extrabold text-green-400 text-5xl my-5 py-5">
         <h1>Our membership Package</h1>
       </div>
       <div className="flex justify-center items-end">
         {/* Package 1 */}
-        <div className="relative rounded-xl mx-auto my-10 space-y-8 bg-[#000] p-8 shadow-[0px_0px_30px_2px_rgba(100,100,111,0.1)] bg-gradient-to-br from-teal-500 to-emerald-500/70 md:w-[300px]">
+        <div data-aos="fade-up" data-aos-duration="1200" className="relative rounded-xl mx-auto my-10 space-y-8 bg-[#000] p-8 shadow-[0px_0px_30px_2px_rgba(100,100,111,0.1)] bg-gradient-to-tr from-green-500 to-teal-500 md:w-[300px]">
           {/* top part  */}
           <div>
             <img
@@ -130,7 +130,7 @@ const Package = () => {
           </div>
         </div>
         {/* Package 1 */}
-        <div className="relative rounded-xl mx-auto my-20 space-y-8 bg-[#000] p-8 shadow-[0px_0px_30px_2px_rgba(100,100,111,0.1)] bg-gradient-to-br from-teal-500 to-emerald-500/70 md:w-[300px]">
+        <div data-aos="fade-up" data-aos-duration="1000" className="relative rounded-xl mx-auto my-20 space-y-8 bg-[#000] p-8 shadow-[0px_0px_30px_2px_rgba(100,100,111,0.1)] bg-gradient-to-tr from-green-500 to-teal-500 md:w-[300px]">
           {/* top part  */}
           <div>
             <img
@@ -243,7 +243,7 @@ const Package = () => {
           </div>
         </div>
         {/* Package 3 */}
-        <div className="relative rounded-xl mx-auto my-10 space-y-8 bg-[#000] p-8 shadow-[0px_0px_30px_2px_rgba(100,100,111,0.1)] bg-gradient-to-br from-teal-500 to-emerald-500/70 md:w-[300px]">
+        <div data-aos="fade-up" data-aos-duration="1200" className="relative rounded-xl mx-auto my-10 space-y-8 bg-[#000] p-8 shadow-[0px_0px_30px_2px_rgba(100,100,111,0.1)] bg-gradient-to-tr from-green-500 to-teal-500 md:w-[300px]">
           {/* top part  */}
           <div>
             <img
