@@ -13,8 +13,6 @@ const Blog = () => {
       <div className="md:grid grid-cols-10 md:gap-5 lg:gap-10">
         <div className="col-span-7 flex flex-col gap-10">
           <div
-            data-aos="fade-right"
-            data-aos-duration="700"
             className="rounded-2xl overflow-hidden relative"
           >
             <img
@@ -22,11 +20,11 @@ const Blog = () => {
               alt=""
               className="rounded-2xl"
             />
-            <h2 className="absolute top-5 left-5 rounded-md px-4 py-1 bg-black/50 text-white">
+            <h2 data-aos="zoom-in" className="absolute top-5 left-5 rounded-md px-4 py-1 bg-black/50 text-white">
               Resort
             </h2>
             <div className="absolute w-11/12 text-white/80 left-6 md:left-10 bottom-0 md:bottom-5 z-10">
-              <div className="flex gap-4 items-center">
+              <div data-aos="fade-right" className="flex gap-4 items-center">
                 <div className="avatar placeholder">
                   <div className="bg-neutral text-neutral-content rounded-full w-10">
                     <img src="https://source.unsplash.com/300x300/?profile" />
@@ -37,7 +35,7 @@ const Blog = () => {
                   <p className="text-xs">17 min read</p>
                 </div>
               </div>
-              <div className="my-5 space-y-3">
+              <div data-aos="fade-right" className="my-5 space-y-3">
                 <h2 className="text-lg md:text-2xl font-bold">
                   Luxurious seaside escape with private beach, spa, and gourmet
                   dining.
@@ -54,7 +52,7 @@ const Blog = () => {
             </div>
             <div className="absolute top-0 h-full w-full bg-gradient-to-t from-black/50"></div>
           </div>
-          <div className="flex flex-wrap mb-4 md:mb-0 md:gap-6 lg:gap-0 lg:flex-nowrap justify-between items-center">
+          <div data-aos="fade-up" className="flex flex-wrap mb-4 md:mb-0 md:gap-6 lg:gap-0 lg:flex-nowrap justify-between items-center">
             <h2 className="text-2xl mb-4 md:mb-0 md:text-5xl font-bold text-black/90">
               Our Honorable Customers
             </h2>
@@ -88,8 +86,6 @@ const Blog = () => {
           </div>
         </div>
         <div
-          data-aos="fade-left"
-          data-aos-duration="700"
           className="col-span-3 flex flex-col gap-10"
         >
           <div className="rounded-2xl relative overflow-hidden h-[20rem]">
@@ -98,11 +94,11 @@ const Blog = () => {
               alt=""
               className="h-full rounded-2xl"
             />
-            <h2 className="absolute top-5 left-5 rounded-md px-4 py-1 bg-black/50 text-white">
+            <h2 data-aos="zoom-in" className="absolute top-5 left-5 rounded-md px-4 py-1 bg-black/50 text-white">
               Hotel
             </h2>
             <div className="absolute w-11/12 text-white/80 left-5 bottom-0 z-10">
-              <div className="flex gap-4 items-center">
+              <div data-aos="fade-left" className="flex gap-4 items-center">
                 <div className="avatar placeholder">
                   <div className="bg-neutral text-neutral-content rounded-full w-10">
                     <img src="https://source.unsplash.com/300x300/?profile-photo" />
@@ -113,7 +109,7 @@ const Blog = () => {
                   <p className="text-xs">12 min read</p>
                 </div>
               </div>
-              <div className="my-5 space-y-3">
+              <div data-aos="fade-left" className="my-5 space-y-3">
                 <h2 className="text-base font-bold">
                   The Historic District with modern amenities and professional
                   service.
@@ -132,11 +128,11 @@ const Blog = () => {
               alt=""
               className="h-full rounded-2xl"
             />
-            <h2 className="absolute top-5 left-5 rounded-md px-4 py-1 bg-black/50 text-white">
+            <h2 data-aos="zoom-in" className="absolute top-5 left-5 rounded-md px-4 py-1 bg-black/50 text-white">
               Vacation
             </h2>
             <div className="absolute w-11/12 text-white/80 left-5 bottom-0 z-10">
-              <div className="flex gap-4 items-center">
+              <div data-aos="fade-left" className="flex gap-4 items-center">
                 <div className="avatar placeholder">
                   <div className="bg-neutral text-neutral-content rounded-full w-10">
                     <img src="https://source.unsplash.com/300x300/?profile-image" />
@@ -147,7 +143,7 @@ const Blog = () => {
                   <p className="text-xs">7 min read</p>
                 </div>
               </div>
-              <div className="my-5 space-y-3">
+              <div data-aos="fade-left" className="my-5 space-y-3">
                 <h2 className="text-base font-bold">
                   Exclusive mountain getaway with ski-in/ski-out access and cozy
                   amenities.
@@ -358,13 +354,13 @@ const Blog = () => {
         </div>
         <div className="col-span-3 mt-10 md:mt-0 md:border-l border-black/30 w-[95%] md:w-full mx-auto md:pl-10">
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold">Trending this week</h2>
+            <h2  data-aos="fade-left" className="text-2xl font-bold">Trending this week</h2>
             <div className="mt-4 border-l-2 border-black/70 ps-4">
-              <h2 className="font-bold text-black/70">
+              <h2 data-aos="fade-left" className="font-bold text-black/70">
                 Tranquil Haven: Luxe Retreat with Breathtaking Views and Serene
                 Ambiance.
               </h2>
-              <div className="flex gap-4 items-center mt-3">
+              <div data-aos="fade-left" className="flex gap-4 items-center mt-3">
                 <div className="avatar placeholder">
                   <div className="bg-neutral text-neutral-content rounded-full w-7">
                     <img src="https://source.unsplash.com/300x300/?profile-photos-2" />
@@ -376,11 +372,11 @@ const Blog = () => {
               </div>
             </div>
             <div className="mt-4 border-l-2 border-black/70 ps-4">
-              <h2 className="font-bold text-black/70">
+              <h2 data-aos="fade-left" className="font-bold text-black/70">
                 Tranquil Haven: Luxe Retreat with Breathtaking Views and Serene
                 Ambiance.
               </h2>
-              <div className="flex gap-4 items-center mt-3">
+              <div data-aos="fade-left" className="flex gap-4 items-center mt-3">
                 <div className="avatar placeholder">
                   <div className="bg-neutral text-neutral-content rounded-full w-7">
                     <img src="https://source.unsplash.com/300x300/?profile-photos-3" />
@@ -392,11 +388,11 @@ const Blog = () => {
               </div>
             </div>
             <div className="mt-4 border-l-2 border-black/70 ps-4">
-              <h2 className="font-bold text-black/70">
+              <h2 data-aos="fade-left" className="font-bold text-black/70">
                 Tranquil Haven: Luxe Retreat with Breathtaking Views and Serene
                 Ambiance.
               </h2>
-              <div className="flex gap-4 items-center mt-3">
+              <div data-aos="fade-left" className="flex gap-4 items-center mt-3">
                 <div className="avatar placeholder">
                   <div className="bg-neutral text-neutral-content rounded-full w-7">
                     <img src="https://source.unsplash.com/300x300/?profile-photos-4" />
@@ -408,11 +404,11 @@ const Blog = () => {
               </div>
             </div>
             <div className="mt-4 border-l-2 border-black/70 ps-4">
-              <h2 className="font-bold text-black/70">
+              <h2 data-aos="fade-left" className="font-bold text-black/70">
                 Tranquil Haven: Luxe Retreat with Breathtaking Views and Serene
                 Ambiance.
               </h2>
-              <div className="flex gap-4 items-center mt-3">
+              <div data-aos="fade-left" className="flex gap-4 items-center mt-3">
                 <div className="avatar placeholder">
                   <div className="bg-neutral text-neutral-content rounded-full w-7">
                     <img src="https://source.unsplash.com/300x300/?profile-photos-5" />
@@ -424,11 +420,11 @@ const Blog = () => {
               </div>
             </div>
             <div className="mt-4 border-l-2 border-black/70 ps-4">
-              <h2 className="font-bold text-black/70">
+              <h2 data-aos="fade-left" className="font-bold text-black/70">
                 Tranquil Haven: Luxe Retreat with Breathtaking Views and Serene
                 Ambiance.
               </h2>
-              <div className="flex gap-4 items-center mt-3">
+              <div data-aos="fade-left" className="flex gap-4 items-center mt-3">
                 <div className="avatar placeholder">
                   <div className="bg-neutral text-neutral-content rounded-full w-7">
                     <img src="https://source.unsplash.com/300x300/?profile-photos-6" />
@@ -439,35 +435,35 @@ const Blog = () => {
                 </div>
               </div>
             </div>
-            <h2 className="underline text-end mt-5">See the full list</h2>
+            <h2 data-aos="fade-right" className="underline text-end mt-5">See the full list</h2>
           </div>
           <div className="mt-10">
-            <h1 className="text-2xl font-bold text-black/80 mb-5">
+            <h1 data-aos="fade-up" className="text-2xl font-bold text-black/80 mb-5">
               You might like
             </h1>
             <div className="flex flex-wrap gap-2">
-              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+              <p data-aos="zoom-in" className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
                 Sundarban
               </p>
-              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+              <p data-aos="zoom-in" className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
                 Cox's bazar
               </p>
-              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+              <p data-aos="zoom-in" className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
                 Sylhet
               </p>
-              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+              <p data-aos="zoom-in" className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
                 Bandarban
               </p>
-              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+              <p data-aos="zoom-in" className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
                 Sajek
               </p>
-              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+              <p data-aos="zoom-in" className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
                 Saint Martin
               </p>
-              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+              <p data-aos="zoom-in" className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
                 National Zoo
               </p>
-              <p className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
+              <p data-aos="zoom-in" className="px-4 py-1 bg-green-600/40 text-bold text-base w-fit rounded-md">
                 Kuakata
               </p>
             </div>
