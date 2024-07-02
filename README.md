@@ -10,7 +10,8 @@
 - Fast Loading Time: Optimized for quick loading to enhance user experience.
 - Easy to Navigate Menu: Simplifies navigation through a clear and user-friendly menu structure.
 - Eye-catching Animations: Engages users with subtle yet effective animations.
-- Technologies Used
+</br>  
+# Technologies Used
 - Swiper Slider: Used for dynamic and interactive image sliders.
 - React Leaflet: Integrates interactive maps for location-based services.
 - AOS Package: Implements animations on scroll to enhance user engagement.
