@@ -1,9 +1,5 @@
 # Website Name: Berao 
 # Live Site URL: https://berao.netlify.app
-
-Memory updated
-Here's a template for your README.md file based on the information you provided:
-
 # Project Overview
 <p>Berao is a website designed to cater to tourists looking for accommodations like hotels, resorts, motels, lodges, and guest houses. It aims to provide a seamless booking experience for travelers.</p>
   </br>
