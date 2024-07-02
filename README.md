@@ -17,7 +17,6 @@
 - Swiper Slider: Used for dynamic and interactive image sliders.
 - React Leaflet: Integrates interactive maps for location-based services.
 - AOS Package: Implements animations on scroll to enhance user engagement.
-- Cloning Instructions
 
 </br>
   
